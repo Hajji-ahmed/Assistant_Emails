@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Campaign Manager - Internship Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-envelope-open-text text-3xl"></i>
+                    <h1 class="text-2xl font-bold">Email Campaign Manager</h1>
+                </div>
+                <div class="flex space-x-4">
+                    <button onclick="showSection('dashboard')" class="nav-btn hover:bg-white hover:text-blue-600 px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-chart-line mr-2"></i>Dashboard
+                    </button>
+                    <button onclick="showSection('resume')" class="nav-btn hover:bg-white hover:text-blue-600 px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-file-alt mr-2"></i>CV
+                    </button>
+                    <button onclick="showSection('startups')" class="nav-btn hover:bg-white hover:text-blue-600 px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-building mr-2"></i>Startups
+                    </button>
+                    <button onclick="showSection('emails')" class="nav-btn hover:bg-white hover:text-blue-600 px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-envelope mr-2"></i>Emails
+                    </button>
+                    <button onclick="showSection('config')" class="nav-btn hover:bg-white hover:text-blue-600 px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-cog mr-2"></i>Configuration
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-8">
+        
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="section">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    <i class="fas fa-chart-line text-blue-600 mr-2"></i>Dashboard
+                </h2>
+                <p class="text-gray-600">Vue d'ensemble de votre campagne de candidature</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Total Startups</p>
+                            <p id="stat-startups" class="text-3xl font-bold text-blue-600 mt-2">0</p>
+                        </div>
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i class="fas fa-building text-blue-600 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Emails Générés</p>
+                            <p id="stat-generated" class="text-3xl font-bold text-green-600 mt-2">0</p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-full">
+                            <i class="fas fa-file-alt text-green-600 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Emails Envoyés</p>
+                            <p id="stat-sent" class="text-3xl font-bold text-indigo-600 mt-2">0</p>
+                        </div>
+                        <div class="bg-indigo-100 p-4 rounded-full">
+                            <i class="fas fa-paper-plane text-indigo-600 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">En Attente</p>
+                            <p id="stat-pending" class="text-3xl font-bold text-orange-600 mt-2">0</p>
+                        </div>
+                        <div class="bg-orange-100 p-4 rounded-full">
+                            <i class="fas fa-clock text-orange-600 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-history text-blue-600 mr-2"></i>Activité Récente
+                </h3>
+                <div id="recent-activity" class="space-y-3">
+                    <p class="text-gray-500">Chargement...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume-section" class="section hidden">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    <i class="fas fa-file-alt text-blue-600 mr-2"></i>Mon CV
+                </h2>
+                <p class="text-gray-600">Gérez vos informations personnelles et professionnelles</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <form id="resume-form" class="space-y-6">
+                    <!-- Personal Info -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
+                            <i class="fas fa-user mr-2 text-blue-600"></i>Informations Personnelles
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Nom</label>
+                                <input type="text" id="resume-name" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="resume-email" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
+                                <input type="tel" id="resume-phone" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">LinkedIn</label>
+                                <input type="url" id="resume-linkedin" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
+                            <i class="fas fa-graduation-cap mr-2 text-blue-600"></i>Formation
+                        </h3>
+                        <div id="education-container" class="space-y-4">
+                            <!-- Education entries will be added dynamically -->
+                        </div>
+                        <button type="button" onclick="addEducation()" class="mt-4 px-4 py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition">
+                            <i class="fas fa-plus mr-2"></i>Ajouter Formation
+                        </button>
+                    </div>
+
+                    <!-- Skills -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
+                            <i class="fas fa-code mr-2 text-blue-600"></i>Compétences
+                        </h3>
+                        <textarea id="resume-skills" rows="4" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Séparez les compétences par des virgules"></textarea>
+                    </div>
+
+                    <!-- Experience -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
+                            <i class="fas fa-briefcase mr-2 text-blue-600"></i>Expériences
+                        </h3>
+                        <div id="experience-container" class="space-y-4">
+                            <!-- Experience entries will be added dynamically -->
+                        </div>
+                        <button type="button" onclick="addExperience()" class="mt-4 px-4 py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition">
+                            <i class="fas fa-plus mr-2"></i>Ajouter Expérience
+                        </button>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="flex justify-end space-x-4 pt-6 border-t">
+                        <button type="button" onclick="loadResume()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                            <i class="fas fa-undo mr-2"></i>Annuler
+                        </button>
+                        <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md">
+                            <i class="fas fa-save mr-2"></i>Enregistrer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Startups Section -->
+        <section id="startups-section" class="section hidden">
+            <div class="mb-8 flex justify-between items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                        <i class="fas fa-building text-blue-600 mr-2"></i>Startups Cibles
+                    </h2>
+                    <p class="text-gray-600">Gérez votre liste d'entreprises cibles</p>
+                </div>
+                <div class="flex space-x-3">
+                    <button onclick="document.getElementById('import-file').click()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition shadow-md">
+                        <i class="fas fa-file-import mr-2"></i>Importer CSV/JSON
+                    </button>
+                    <input type="file" id="import-file" accept=".csv,.json" class="hidden" onchange="importStartups(event)">
+                    <button onclick="exportStartups()" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition shadow-md">
+                        <i class="fas fa-file-export mr-2"></i>Exporter
+                    </button>
+                    <button onclick="showAddStartupModal()" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md">
+                        <i class="fas fa-plus mr-2"></i>Ajouter Startup
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Filter -->
+            <div class="mb-4 bg-white rounded-xl shadow-md p-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1">
+                        <input type="text" id="startup-search" placeholder="Rechercher par nom, email ou domaine..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" oninput="filterStartups()">
+                    </div>
+                    <button onclick="clearStartupFilter()" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        <i class="fas fa-times mr-2"></i>Effacer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Startups Table -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50 border-b">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nom</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Domaine</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Site Web</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="startups-table-body" class="bg-white divide-y divide-gray-200">
+                            <!-- Table rows will be added dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emails Section -->
+        <section id="emails-section" class="section hidden">
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                            <i class="fas fa-envelope text-blue-600 mr-2"></i>Emails de Candidature
+                        </h2>
+                        <p class="text-gray-600">Générez et gérez vos emails de candidature</p>
+                    </div>
+                </div>
+
+                <!-- Action Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Generate Emails Card -->
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white cursor-pointer hover:shadow-2xl transition transform hover:scale-105" onclick="generateEmails()">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">
+                                    <i class="fas fa-magic mr-2"></i>Générer Tous les Emails
+                                </h3>
+                                <p class="text-green-100 text-sm">Utilisez l'IA pour créer des emails personnalisés</p>
+                                <div class="mt-4">
+                                    <span class="bg-white text-green-600 px-4 py-2 rounded-lg font-semibold inline-block">
+                                        <i class="fas fa-robot mr-2"></i>Lancer la génération
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-5xl opacity-20">
+                                <i class="fas fa-wand-magic-sparkles"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Send Emails Card -->
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl shadow-lg p-6 text-white cursor-pointer hover:shadow-2xl transition transform hover:scale-105" onclick="sendSelectedEmails()">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">
+                                    <i class="fas fa-paper-plane mr-2"></i>Envoyer les Emails
+                                </h3>
+                                <p class="text-blue-100 text-sm">Envoyez les emails sélectionnés aux startups</p>
+                                <div class="mt-4">
+                                    <span class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold inline-block">
+                                        <i class="fas fa-check-circle mr-2"></i><span id="selected-count">0</span> sélectionné(s)
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-5xl opacity-20">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selection Controls -->
+                <div class="bg-white rounded-xl shadow-md p-4 mb-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <button onclick="selectAllEmails()" class="px-4 py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition">
+                                <i class="fas fa-check-double mr-2"></i>Tout sélectionner
+                            </button>
+                            <button onclick="deselectAllEmails()" class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition">
+                                <i class="fas fa-times mr-2"></i>Tout désélectionner
+                            </button>
+                        </div>
+                        <div class="text-gray-600">
+                            <span class="font-semibold"><span id="emails-count">0</span> emails</span> générés
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emails List -->
+            <div id="emails-container" class="space-y-4">
+                <!-- Email cards will be added dynamically -->
+            </div>
+        </section>
+
+        <!-- Configuration Section -->
+        <section id="config-section" class="section hidden">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    <i class="fas fa-cog text-blue-600 mr-2"></i>Configuration
+                </h2>
+                <p class="text-gray-600">Paramétrez votre campagne d'emailing</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- AI Configuration Card -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">
+                        <i class="fas fa-robot text-blue-600 mr-2"></i>Configuration IA (Gemini)
+                    </h3>
+                    <form id="ai-config-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Clé API Google Gemini
+                            </label>
+                            <input type="password" id="gemini-api-key" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Entrez votre clé API Gemini">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Modèle Gemini
+                            </label>
+                            <select id="gemini-model" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="gemini-pro">gemini-pro</option>
+                                <option value="gemini-1.5-pro">gemini-1.5-pro</option>
+                                <option value="gemini-1.5-flash">gemini-1.5-flash</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Prompt de génération d'email
+                            </label>
+                            <textarea id="email-prompt" rows="8" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Entrez le prompt utilisé pour générer les emails..."></textarea>
+                            <p class="text-xs text-gray-500 mt-1">Ce prompt sera utilisé par l'IA pour générer les emails personnalisés</p>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md">
+                            <i class="fas fa-save mr-2"></i>Sauvegarder Configuration IA
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Email Configuration Card -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">
+                        <i class="fas fa-envelope text-blue-600 mr-2"></i>Configuration Gmail
+                    </h3>
+                    <form id="email-config-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Adresse Email (Gmail)
+                            </label>
+                            <input type="email" id="gmail-user" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="votre@gmail.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Mot de passe d'application Gmail
+                                <a href="https://myaccount.google.com/apppasswords" target="_blank" class="text-blue-600 text-xs ml-2">
+                                    <i class="fas fa-external-link-alt"></i>Créer
+                                </a>
+                            </label>
+                            <input type="password" id="gmail-app-password" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Mot de passe d'application">
+                            <p class="text-xs text-gray-500 mt-1">Ne jamais utiliser votre mot de passe Gmail normal</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Lien vers votre CV (Google Drive, etc.)
+                            </label>
+                            <input type="url" id="resume-link" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="https://drive.google.com/...">
+                        </div>
+                        <div class="flex space-x-3">
+                            <button type="button" onclick="testGmailConnection()" class="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition shadow-md">
+                                <i class="fas fa-vial mr-2"></i>Tester Connexion
+                            </button>
+                            <button type="submit" class="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md">
+                                <i class="fas fa-save mr-2"></i>Sauvegarder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Current Configuration Display -->
+            <div class="mt-6 bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">
+                    <i class="fas fa-info-circle text-blue-600 mr-2"></i>Configuration Actuelle
+                </h3>
+                <div id="current-config" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-600 mb-1">Clé API Gemini</p>
+                        <p class="font-semibold text-gray-800" id="display-api-key">Non configurée</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-600 mb-1">Email Gmail</p>
+                        <p class="font-semibold text-gray-800" id="display-gmail">Non configuré</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-600 mb-1">Modèle Gemini</p>
+                        <p class="font-semibold text-gray-800" id="display-model">gemini-pro</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-600 mb-1">Status Gmail</p>
+                        <p class="font-semibold" id="display-status">
+                            <i class="fas fa-circle text-gray-400 mr-1"></i>Non testé
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Add/Edit Startup Modal -->
+    <div id="startup-modal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-xl shadow-2xl p-8 max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-building text-blue-600 mr-2"></i><span id="modal-title">Ajouter Startup</span>
+            </h3>
+            <form id="startup-form" class="space-y-4">
+                <input type="hidden" id="startup-id">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Nom de la Startup *</label>
+                        <input type="text" id="startup-name" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                        <input type="email" id="startup-email" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Domaine</label>
+                        <input type="text" id="startup-domain" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Site Web</label>
+                        <input type="url" id="startup-website" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                    <textarea id="startup-description" rows="4" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                </div>
+                <div class="flex justify-end space-x-4 pt-4 border-t">
+                    <button type="button" onclick="closeStartupModal()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        <i class="fas fa-times mr-2"></i>Annuler
+                    </button>
+                    <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md">
+                        <i class="fas fa-save mr-2"></i>Enregistrer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-xl shadow-2xl p-8 text-center">
+            <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mx-auto mb-4"></div>
+            <p class="text-gray-700 font-medium" id="loading-message">Chargement...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
