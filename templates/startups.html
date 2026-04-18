@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% block title %}Startups{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h2>Startups <span class="count-badge">{{ startups|length }}</span></h2>
+    <p class="subtitle">Édition directe — n'oubliez pas d'enregistrer</p>
+</header>
+
+<div class="toolbar" id="toolbar">
+    <input type="text" id="search-input" class="search-input" placeholder="Rechercher (nom, ville, secteur, contact, email)…">
+    <select id="page-size" class="page-size">
+        <option value="25">25 / page</option>
+        <option value="50" selected>50 / page</option>
+        <option value="100">100 / page</option>
+        <option value="0">Tout</option>
+    </select>
+    <button type="button" class="btn" id="add-row">+ Ajouter</button>
+    <button type="button" class="btn btn-primary" id="save-btn">Enregistrer</button>
+    <span id="save-status" class="save-status"></span>
+</div>
+
+<div class="pager" id="pager">
+    <button type="button" class="btn" id="prev-page">‹ Précédent</button>
+    <span class="pager-info" id="pager-info">—</span>
+    <button type="button" class="btn" id="next-page">Suivant ›</button>
+</div>
+
+<div class="empty-state" id="empty-state" hidden>
+    <h3>Aucune startup</h3>
+    <p>Ajoutez votre première entreprise cible pour lancer une campagne.</p>
+    <button type="button" class="btn btn-primary" id="empty-add-first">+ Ajouter la première startup</button>
+</div>
+
+<div class="table-wrapper" id="table-wrapper">
+    <table class="data-table" id="startups-table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Ville</th>
+                <th>Secteur</th>
+                <th>Technologie</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in startups %}
+            <tr>
+                <td contenteditable="true" data-field="EntrepriseName">{{ s.EntrepriseName or '' }}</td>
+                <td contenteditable="true" data-field="EntrepriseContactName">{{ s.EntrepriseContactName or '' }}</td>
+                <td contenteditable="true" data-field="EntrepriseContactEmail">{{ s.EntrepriseContactEmail or '' }}</td>
+                <td contenteditable="true" data-field="EntrepriseVille">{{ s.EntrepriseVille or '' }}</td>
+                <td contenteditable="true" data-field="EntrepriseSecteurActivite">{{ s.EntrepriseSecteurActivite or '' }}</td>
+                <td contenteditable="true" data-field="EntrepriseTechnologie">{{ s.EntrepriseTechnologie or '' }}</td>
+                <td><button type="button" class="btn-icon delete-row" title="Supprimer" aria-label="Supprimer cette ligne"><span aria-hidden="true">✕</span></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const table = document.getElementById('startups-table');
+const status = document.getElementById('save-status');
+const tbody = table.querySelector('tbody');
+const searchInput = document.getElementById('search-input');
+const pageSizeSelect = document.getElementById('page-size');
+const prevBtn = document.getElementById('prev-page');
+const nextBtn = document.getElementById('next-page');
+const pagerInfo = document.getElementById('pager-info');
+const emptyState = document.getElementById('empty-state');
+const tableWrapper = document.getElementById('table-wrapper');
+const pager = document.getElementById('pager');
+
+let currentPage = 0;
+
+function rowMatchesQuery(tr, query) {
+    if (!query) return true;
+    return tr.textContent.toLowerCase().includes(query);
+}
+
+function render() {
+    const query = searchInput.value.trim().toLowerCase();
+    const pageSize = parseInt(pageSizeSelect.value, 10);
+    const rows = [...tbody.querySelectorAll('tr')];
+
+    // Toggle empty state when the dataset itself is empty (no rows at all,
+    // regardless of search filter). Filtered-to-empty is handled separately
+    // below so users know their search is what produced no results.
+    const isEmpty = rows.length === 0;
+    emptyState.hidden = !isEmpty;
+    tableWrapper.hidden = isEmpty;
+    pager.hidden = isEmpty;
+    if (isEmpty) return;
+
+    // First pass: filter
+    const matching = rows.filter(tr => rowMatchesQuery(tr, query));
+    const total = matching.length;
+
+    // Clamp current page to valid range
+    const totalPages = pageSize === 0 ? 1 : Math.max(1, Math.ceil(total / pageSize));
+    if (currentPage >= totalPages) currentPage = totalPages - 1;
+    if (currentPage < 0) currentPage = 0;
+
+    // Hide everything first
+    rows.forEach(tr => tr.style.display = 'none');
+
+    // Then reveal only the matching slice
+    const start = pageSize === 0 ? 0 : currentPage * pageSize;
+    const end = pageSize === 0 ? matching.length : start + pageSize;
+    matching.slice(start, end).forEach(tr => tr.style.display = '');
+
+    // Update pager UI
+    if (pageSize === 0) {
+        pagerInfo.textContent = `${total} entreprise(s)`;
+    } else {
+        const shownFrom = total === 0 ? 0 : start + 1;
+        const shownTo = Math.min(end, total);
+        pagerInfo.textContent = `${shownFrom}–${shownTo} sur ${total} · page ${currentPage + 1}/${totalPages}`;
+    }
+    prevBtn.disabled = currentPage === 0 || pageSize === 0;
+    nextBtn.disabled = pageSize === 0 || currentPage >= totalPages - 1;
+}
+
+searchInput.addEventListener('input', () => { currentPage = 0; render(); });
+pageSizeSelect.addEventListener('change', () => { currentPage = 0; render(); });
+prevBtn.addEventListener('click', () => { currentPage--; render(); });
+nextBtn.addEventListener('click', () => { currentPage++; render(); });
+
+function addRow() {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td contenteditable="true" data-field="EntrepriseName"></td>
+        <td contenteditable="true" data-field="EntrepriseContactName"></td>
+        <td contenteditable="true" data-field="EntrepriseContactEmail"></td>
+        <td contenteditable="true" data-field="EntrepriseVille"></td>
+        <td contenteditable="true" data-field="EntrepriseSecteurActivite"></td>
+        <td contenteditable="true" data-field="EntrepriseTechnologie"></td>
+        <td><button type="button" class="btn-icon delete-row" title="Supprimer" aria-label="Supprimer cette ligne"><span aria-hidden="true">✕</span></button></td>`;
+    tbody.insertBefore(tr, tbody.firstChild);
+    currentPage = 0;
+    searchInput.value = '';
+    render();
+    tr.querySelector('[contenteditable="true"]').focus();
+}
+document.getElementById('add-row').addEventListener('click', addRow);
+document.getElementById('empty-add-first').addEventListener('click', addRow);
+
+table.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-row')) {
+        e.target.closest('tr').remove();
+        render();
+    }
+});
+
+document.getElementById('save-btn').addEventListener('click', async (e) => {
+    // Save ALL rows (including hidden by filter/pagination)
+    const rows = [...tbody.querySelectorAll('tr')];
+    const data = rows.map(tr => {
+        const obj = {};
+        tr.querySelectorAll('[data-field]').forEach(td => {
+            obj[td.dataset.field] = td.textContent.trim();
+        });
+        return obj;
+    }).filter(o => o.EntrepriseName);
+    e.target.disabled = true;
+    status.textContent = 'Enregistrement…';
+    status.className = 'save-status saving';
+    try {
+        const res = await fetch('/api/startups', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ data })
+        });
+        const out = await res.json();
+        if (out.ok) {
+            status.textContent = `✓ ${out.count} entreprises enregistrées`;
+            status.className = 'save-status saved';
+        } else {
+            status.textContent = `✗ ${out.error || 'Erreur'}`;
+            status.className = 'save-status error';
+        }
+    } catch (err) {
+        status.textContent = `✗ ${err.message}`;
+        status.className = 'save-status error';
+    } finally {
+        e.target.disabled = false;
+    }
+});
+
+render();
+</script>
+{% endblock %}

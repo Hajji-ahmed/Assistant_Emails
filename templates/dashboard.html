@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — Internship Email Manager{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h2>Dashboard</h2>
+    <p class="subtitle">Vue d'ensemble de votre campagne</p>
+</header>
+
+{% set pct_gen = (100 * stats.emails_generated // stats.startups_total) if stats.startups_total else 0 %}
+{% set pct_sent = (100 * stats.emails_sent // stats.emails_generated) if stats.emails_generated else 0 %}
+{% set remaining = stats.startups_total - stats.emails_generated %}
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">Startups</span>
+        <span class="stat-value">{{ stats.startups_total }}</span>
+        <span class="stat-sub">entreprises cibles</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Emails générés</span>
+        <span class="stat-value">{{ stats.emails_generated }}</span>
+        <span class="stat-sub">{{ pct_gen }}% · {{ remaining }} restants</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Emails envoyés</span>
+        <span class="stat-value">{{ stats.emails_sent }}</span>
+        <span class="stat-sub">{{ pct_sent }}% des générés</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Entreprises traitées</span>
+        <span class="stat-value">{{ stats.companies_processed }}</span>
+        <span class="stat-sub">génération tentée</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Aujourd'hui</span>
+        <span class="stat-value">{{ stats.today_sent }}{% if stats.daily_limit %}<span class="stat-value-suffix">/ {{ stats.daily_limit }}</span>{% endif %}</span>
+        <span class="stat-sub">{% if stats.daily_limit %}cap quotidien{% else %}aucun cap défini{% endif %}</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Réponses</span>
+        <span class="stat-value">{{ stats.replies_count }}</span>
+        <span class="stat-sub">
+            {% if stats.emails_sent %}{{ (100 * stats.replies_count // stats.emails_sent) }}% de taux de réponse{% else %}aucun envoi{% endif %}
+        </span>
+    </div>
+    <div class="stat-card {% if stats.followups_due %}stat-card-alert{% endif %}">
+        <span class="stat-label">Relances dues</span>
+        <span class="stat-value">{{ stats.followups_due }}</span>
+        <span class="stat-sub">
+            {% if stats.followups_due %}après {{ stats.followups_delay_days }} j sans réponse{% else %}tout est à jour · {{ stats.followups_sent }} envoyées{% endif %}
+        </span>
+    </div>
+</section>
+
+<section class="action-panel">
+    <h3>Actions</h3>
+    <div class="action-row">
+        <div class="action-group">
+            <button type="button" class="btn btn-primary" id="btn-generate">Générer les emails</button>
+            <button type="button" class="btn btn-primary" id="btn-send">Envoyer (tous)</button>
+            <button type="button" class="btn" id="btn-check-replies">Vérifier les réponses</button>
+            <button type="button" class="btn {% if stats.followups_due %}btn-primary{% endif %}" id="btn-send-followups">
+                Envoyer relances {% if stats.followups_due %}({{ stats.followups_due }}){% endif %}
+            </button>
+        </div>
+        <div class="action-group action-group-secondary">
+            <span class="action-group-label">Suivi</span>
+            <button type="button" class="btn" id="btn-reset-sent">Reset envois</button>
+            <button type="button" class="btn" id="btn-reset-processed">Reset génération</button>
+        </div>
+    </div>
+    <div class="danger-zone">
+        <span class="danger-label">Zone dangereuse</span>
+        <button type="button" class="btn btn-danger" id="btn-clear-emails">Supprimer tous les emails</button>
+    </div>
+    <div class="log-box" id="log-box">
+        <div class="log-header">
+            <span>Journal</span>
+            <span class="log-header-right">
+                <button type="button" class="btn-cancel" id="btn-cancel" hidden>Annuler</button>
+                <span id="log-status" class="log-status">inactif</span>
+            </span>
+        </div>
+        <pre id="log-content"></pre>
+    </div>
+</section>
+
+<section class="pipeline-panel">
+    <h3>Pipeline par statut</h3>
+    {% set total = stats.emails_generated %}
+    <div class="pipeline-bar">
+        {% for s in status_order %}
+        {% set count = stats.status_counts[s] %}
+        {% if count %}
+        <div class="pipeline-segment status-{{ s }}"
+             style="flex: {{ count }} 0 0;"
+             title="{{ status_labels[s] }} : {{ count }}">
+            {% if count * 100 / total > 6 %}<span class="pipeline-label">{{ count }}</span>{% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <ul class="pipeline-legend">
+        {% for s in status_order %}
+        <li>
+            <span class="status-dot status-{{ s }}"></span>
+            <span class="pipeline-legend-label">{{ status_labels[s] }}</span>
+            <span class="pipeline-legend-count">{{ stats.status_counts[s] }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="info-panel">
+    <h3>État de la configuration</h3>
+    <ul>
+        <li>Modèle OpenAI : <strong>{{ cfg.openai.model or '—' }}</strong></li>
+        <li>Clé OpenAI : <strong>{% if cfg.openai.api_key %}configurée{% else %}<span class="warn">manquante</span>{% endif %}</strong></li>
+        <li>Expéditeur SMTP : <strong>{{ cfg.smtp.user or '—' }}</strong></li>
+        <li>Lien CV : <strong>{{ cfg.profile.resume_link or '—' }}</strong></li>
+    </ul>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/jobs.js') }}"></script>
+<script>
+const log = document.getElementById('log-content');
+const status = document.getElementById('log-status');
+const cancelBtn = document.getElementById('btn-cancel');
+let currentJobId = null;
+
+cancelBtn.addEventListener('click', async () => {
+    if (!currentJobId) return;
+    cancelBtn.disabled = true;
+    cancelBtn.textContent = 'Annulation…';
+    await fetch(`/api/jobs/${currentJobId}/cancel`, { method: 'POST' });
+});
+
+function appendLog(event) {
+    const ts = new Date((event.ts || Date.now()/1000) * 1000).toLocaleTimeString();
+    const type = (event.type || 'info').toUpperCase();
+    log.textContent += `[${ts}] [${type}] ${event.message || ''}\n`;
+    log.scrollTop = log.scrollHeight;
+}
+
+async function runJob(url, body) {
+    status.textContent = 'démarrage…';
+    log.textContent = '';
+    try {
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body || {})
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            status.textContent = 'erreur';
+            appendLog({ type: 'error', message: data.error || 'Erreur inconnue' });
+            return;
+        }
+        currentJobId = data.job_id;
+        cancelBtn.hidden = false;
+        cancelBtn.disabled = false;
+        cancelBtn.textContent = 'Annuler';
+        status.textContent = `en cours (job ${data.job_id})`;
+        streamJob(data.job_id, appendLog, (finalStatus) => {
+            status.textContent = finalStatus;
+            cancelBtn.hidden = true;
+            currentJobId = null;
+            setTimeout(() => location.reload(), 1500);
+        });
+    } catch (e) {
+        status.textContent = 'erreur';
+        appendLog({ type: 'error', message: e.message });
+    }
+}
+
+document.getElementById('btn-generate').addEventListener('click', () => {
+    if (!confirm('Lancer la génération des emails pour toutes les startups non traitées ?')) return;
+    runJob('/api/generate');
+});
+
+document.getElementById('btn-send').addEventListener('click', () => {
+    if (!confirm('Envoyer TOUS les emails générés non envoyés ?')) return;
+    runJob('/api/send');
+});
+
+document.getElementById('btn-check-replies').addEventListener('click', () => {
+    runJob('/api/check-replies');
+});
+
+document.getElementById('btn-send-followups').addEventListener('click', () => {
+    const due = {{ stats.followups_due }};
+    if (due === 0) {
+        alert('Aucune relance due.');
+        return;
+    }
+    if (!confirm(`Envoyer ${due} relance(s) due(s) ?`)) return;
+    runJob('/api/send-followups');
+});
+
+async function confirmReset(label, url, body) {
+    if (!confirm(`${label} — êtes-vous sûr ?`)) return;
+    const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body || {})
+    });
+    if (res.ok) location.reload();
+}
+
+document.getElementById('btn-reset-sent').addEventListener('click', () =>
+    confirmReset('Réinitialiser la liste des envois', '/api/tracking/reset', { scope: 'sent' }));
+document.getElementById('btn-reset-processed').addEventListener('click', () =>
+    confirmReset('Réinitialiser la liste des entreprises traitées', '/api/tracking/reset', { scope: 'processed' }));
+document.getElementById('btn-clear-emails').addEventListener('click', () =>
+    confirmReset('Supprimer tous les emails générés', '/api/emails/clear'));
+</script>
+{% endblock %}

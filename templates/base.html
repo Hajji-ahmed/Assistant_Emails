@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Internship Email Manager{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <nav class="topnav">
+        <h1 class="logo">Internship Mailer</h1>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">Dashboard</a></li>
+            <li><a href="{{ url_for('config_page') }}" class="{% if request.endpoint == 'config_page' %}active{% endif %}">Configuration</a></li>
+            <li><a href="{{ url_for('prompt_page') }}" class="{% if request.endpoint == 'prompt_page' %}active{% endif %}">Prompt</a></li>
+            <li><a href="{{ url_for('startups_page') }}" class="{% if request.endpoint == 'startups_page' %}active{% endif %}">Startups</a></li>
+            <li><a href="{{ url_for('emails_page') }}" class="{% if request.endpoint == 'emails_page' %}active{% endif %}">Emails</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-zone">
+                {% for category, msg in messages %}
+                    <div class="flash flash-{{ category }}" data-auto-dismiss="5000">
+                        <span>{{ msg }}</span>
+                        <button type="button" class="flash-close" aria-label="Fermer"><span aria-hidden="true">×</span></button>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+Tu es chargé de rédiger un email de RELANCE suite à un premier email resté sans réponse.
+
+Contraintes strictes :
+- L'email doit être court : 80 à 120 mots maximum.
+- Ton : poli, respectueux, non insistant.
+- Aucune culpabilisation, aucune pression.
+- Format : texte brut uniquement.
+
+Structure obligatoire :
+
+1. Objet : Re: Votre intérêt pour nos solutions IA — {EntrepriseName}
+
+2. Introduction (1 phrase) :
+"Bonjour, je me permets de revenir vers vous concernant mon précédent message à propos des solutions IA et développement que nous pourrions proposer à {EntrepriseName}."
+
+3. Corps (2 phrases max) :
+- Rappeler brièvement en 1 phrase la valeur proposée.
+- Préciser qu'un échange rapide (15 minutes) suffirait à répondre à toute question.
+
+4. Appel à l'action (1 phrase) :
+Proposer 2 créneaux d'échange ou inviter à répondre simplement « oui » pour organiser un échange.
+
+5. Conclusion (1 phrase) :
+Remercier pour le temps accordé et souhaiter une bonne continuation.
+
+6. Signature :
+{Signature}

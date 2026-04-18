@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block title %}Prompts{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h2>Galerie de prompts</h2>
+    <p class="subtitle">Templates pour campagnes et relances. Variables : <code>{EntrepriseName}</code>, <code>{Signature}</code>…</p>
+</header>
+
+<div class="prompt-layout">
+    <aside class="template-gallery">
+        <div class="gallery-header">
+            <h3>Templates</h3>
+            <button type="button" class="btn" id="new-template">+ Nouveau</button>
+        </div>
+        <ul class="template-list">
+            {% for t in templates %}
+            <li class="template-item {% if t.id == selected.id %}active{% endif %}"
+                data-id="{{ t.id }}" data-kind="{{ t.kind }}">
+                <a href="{{ url_for('prompt_page', template_id=t.id) }}" class="template-link">
+                    <span class="template-kind kind-{{ t.kind }}">{{ 'Campagne' if t.kind == 'campaign' else 'Relance' }}</span>
+                    <span class="template-name">{{ t.name }}</span>
+                    {% if (t.kind == 'campaign' and t.id == active_campaign) or (t.kind == 'followup' and t.id == active_followup) %}
+                    <span class="template-active-dot" title="Actif"></span>
+                    {% endif %}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </aside>
+
+    <section class="template-editor">
+        <div class="editor-header">
+            <div>
+                <span class="template-kind kind-{{ selected.kind }}">{{ 'Campagne' if selected.kind == 'campaign' else 'Relance' }}</span>
+                <input type="text" id="template-name" value="{{ selected.name }}" class="template-name-input">
+            </div>
+            <div class="editor-actions">
+                {% set is_active = (selected.kind == 'campaign' and selected.id == active_campaign) or (selected.kind == 'followup' and selected.id == active_followup) %}
+                {% if not is_active %}
+                <button type="button" class="btn" id="activate-template">Activer ce template</button>
+                {% else %}
+                <span class="active-badge">● Actif</span>
+                {% endif %}
+                <button type="button" class="btn" id="preview-btn">Prévisualiser</button>
+                <button type="button" class="btn btn-primary" id="save-template">Enregistrer</button>
+                {% if templates|length > 1 %}
+                <button type="button" class="btn btn-danger" id="delete-template">Supprimer</button>
+                {% endif %}
+                <span id="editor-status" class="save-status"></span>
+            </div>
+        </div>
+
+        <textarea id="template-editor" rows="26" data-id="{{ selected.id }}">{{ template_text }}</textarea>
+
+        <aside class="side-panel vars-panel">
+            <h3>Variables disponibles</h3>
+            <ul class="var-list">
+                {% for v in available_vars %}
+                <li><code>{{ '{' + v + '}' }}</code></li>
+                {% endfor %}
+            </ul>
+        </aside>
+    </section>
+</div>
+
+<div id="preview-output" class="preview-box" hidden>
+    <h3>Prompt rendu pour <span id="preview-company"></span></h3>
+    <pre id="preview-content"></pre>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const editor = document.getElementById('template-editor');
+const templateId = editor.dataset.id;
+const nameInput = document.getElementById('template-name');
+const status = document.getElementById('editor-status');
+
+async function post(url, body, method = 'POST') {
+    const res = await fetch(url, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: body ? JSON.stringify(body) : undefined,
+    });
+    return { ok: res.ok, data: await res.json() };
+}
+
+document.getElementById('save-template').addEventListener('click', async (e) => {
+    e.target.disabled = true;
+    status.textContent = 'Enregistrement…';
+    status.className = 'save-status saving';
+    const { ok, data } = await post(`/api/templates/${templateId}`, {
+        body: editor.value,
+        name: nameInput.value,
+    }, 'PUT');
+    e.target.disabled = false;
+    if (ok) {
+        status.textContent = '✓ Enregistré';
+        status.className = 'save-status saved';
+    } else {
+        status.textContent = `✗ ${data.error || 'Erreur'}`;
+        status.className = 'save-status error';
+    }
+});
+
+document.getElementById('activate-template')?.addEventListener('click', async () => {
+    const { ok } = await post(`/api/templates/${templateId}/activate`);
+    if (ok) location.reload();
+});
+
+document.getElementById('delete-template')?.addEventListener('click', async () => {
+    if (!confirm(`Supprimer le template « ${nameInput.value} » ? Les emails déjà générés conservent leur contenu.`)) return;
+    const { ok } = await post(`/api/templates/${templateId}`, null, 'DELETE');
+    if (ok) location.href = '/prompt';
+});
+
+document.getElementById('new-template').addEventListener('click', async () => {
+    const name = prompt('Nom du nouveau template :');
+    if (!name) return;
+    const kind = confirm('OK = Campagne, Annuler = Relance') ? 'campaign' : 'followup';
+    const { ok, data } = await post('/api/templates', { name, kind, body: '' });
+    if (ok) location.href = '/prompt/' + data.template.id;
+    else alert(data.error || 'Erreur');
+});
+
+document.getElementById('preview-btn').addEventListener('click', async () => {
+    const { data } = await post('/prompt/preview', { template: editor.value, startup_index: 0 });
+    document.getElementById('preview-company').textContent = data.company;
+    document.getElementById('preview-content').textContent = data.rendered;
+    document.getElementById('preview-output').hidden = false;
+});
+</script>
+{% endblock %}

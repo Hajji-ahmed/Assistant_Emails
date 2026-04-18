@@ -11,6 +11,7 @@ email_tracking.json
 generated_emails.json
 startups.json
 resume.json
+config.json
 
 # Python
 __pycache__/

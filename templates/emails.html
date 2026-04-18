@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+{% block title %}Emails générés{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h2>Emails générés <span class="count-badge">{{ emails|length }}</span></h2>
+    <p class="subtitle">Prévisualisez, modifiez, supprimez ou envoyez</p>
+</header>
+
+{% if emails %}
+<div class="status-filter">
+    <button type="button" class="status-tab active" data-filter="all">Tous <span class="tab-count">{{ emails|length }}</span></button>
+    {% for s in status_order %}
+    {% if status_counts[s] %}
+    <button type="button" class="status-tab" data-filter="{{ s }}">
+        <span class="status-dot status-{{ s }}"></span>
+        {{ status_labels[s] }}
+        <span class="tab-count">{{ status_counts[s] }}</span>
+    </button>
+    {% endif %}
+    {% endfor %}
+</div>
+
+<div class="toolbar">
+    <label class="inline-check"><input type="checkbox" id="check-all"> Tout sélectionner</label>
+    <span class="selection-count" id="selection-count">0 sélectionné(s)</span>
+    <button type="button" class="btn btn-primary" id="send-selected">Envoyer la sélection</button>
+    <button type="button" class="btn" id="reset-sent-selected" title="Marquer comme non envoyés pour pouvoir les renvoyer">Retirer des envois</button>
+    <button type="button" class="btn" id="reset-processed-selected" title="Retirer de la liste des entreprises déjà traitées">Retirer du suivi génération</button>
+    <span id="send-status" class="save-status"></span>
+</div>
+<div class="log-box compact" id="log-box" hidden>
+    <div class="log-header">
+        <span>Envoi en cours</span>
+        <span class="log-header-right">
+            <button type="button" class="btn-cancel" id="btn-cancel-emails" hidden>Annuler</button>
+            <span id="log-status" class="log-status">—</span>
+        </span>
+    </div>
+    <pre id="log-content"></pre>
+</div>
+{% endif %}
+
+{% if not emails %}
+<div class="empty-state">
+    <p>Aucun email généré pour le moment.</p>
+    <p class="hint">Lancez la génération depuis la page Dashboard (Phase 4).</p>
+</div>
+{% else %}
+<div class="email-list">
+    {% for e in emails %}
+    <details class="email-item {% if e._sent %}sent{% endif %} {% if e._reply %}replied{% endif %}"
+             data-index="{{ loop.index0 }}"
+             data-company="{{ e.company_name }}"
+             data-status="{{ e._status }}">
+        <summary>
+            <input type="checkbox" class="select-email" data-company="{{ e.company_name }}" data-sent="{{ '1' if e._sent else '0' }}" onclick="event.stopPropagation()">
+            <span class="company" title="{{ e.company_name }}">{{ e.company_name }}</span>
+            <span class="meta" title="{{ e.hr_email or '' }}">{{ e.hr_email or '—' }}</span>
+            <select class="status-select status-{{ e._status }} {% if e._status_manual %}is-manual{% endif %}"
+                    data-company="{{ e.company_name }}"
+                    onclick="event.stopPropagation()"
+                    title="{% if e._status_manual %}Statut manuel{% else %}Statut auto{% endif %}">
+                {% for s in status_order %}
+                <option value="{{ s }}" {% if s == e._status %}selected{% endif %}>{{ status_labels[s] }}</option>
+                {% endfor %}
+            </select>
+        </summary>
+        <div class="email-body">
+            {% if e._reply %}
+            <div class="reply-preview">
+                <div class="reply-header">
+                    <strong>Réponse reçue</strong>
+                    <span class="reply-date">{{ e._reply.reply_date[:10] }}</span>
+                </div>
+                <div class="reply-meta">
+                    <span class="reply-from">De : {{ e._reply.from }}</span>
+                    <span class="reply-subject">Sujet : {{ e._reply.reply_subject }}</span>
+                </div>
+                <pre class="reply-body">{{ e._reply.reply_preview }}</pre>
+            </div>
+            {% endif %}
+            <label>
+                <span>Destinataire (nom)</span>
+                <input type="text" data-field="hr_name" value="{{ e.hr_name or '' }}">
+            </label>
+            <label>
+                <span>Destinataire (email)</span>
+                <input type="email" data-field="hr_email" value="{{ e.hr_email or '' }}">
+            </label>
+            <label>
+                <span>Sujet</span>
+                <input type="text" data-field="email_subject" value="{{ e.email_subject or '' }}">
+            </label>
+            <label>
+                <span>Corps</span>
+                <textarea data-field="email_body" rows="12">{{ e.email_body or '' }}</textarea>
+            </label>
+            <div class="actions">
+                <button type="button" class="btn save-email">Enregistrer</button>
+                <button type="button" class="btn test-self">Test → moi</button>
+                {% if e._sent %}<button type="button" class="btn reset-sent-one">Marquer non envoyé</button>{% endif %}
+                <button type="button" class="btn btn-danger delete-email">Supprimer</button>
+                <span class="save-status"></span>
+            </div>
+        </div>
+    </details>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/jobs.js') }}"></script>
+<script>
+// Status filter tabs — show only emails whose data-status matches
+document.querySelectorAll('.status-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.status-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        document.querySelectorAll('.email-item').forEach(item => {
+            item.style.display = (filter === 'all' || item.dataset.status === filter) ? '' : 'none';
+        });
+    });
+});
+
+// Status dropdown — persist the manual override on change
+const STATUS_CLASSES = {{ status_order | tojson }};
+document.querySelectorAll('.status-select').forEach(select => {
+    select.addEventListener('change', async () => {
+        const company = select.dataset.company;
+        const newStatus = select.value;
+        select.disabled = true;
+        const res = await fetch(`/api/status/${encodeURIComponent(company)}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: newStatus })
+        });
+        select.disabled = false;
+        if (res.ok) {
+            // Swap the color class on the dropdown + update the data-status on the item
+            STATUS_CLASSES.forEach(s => select.classList.remove('status-' + s));
+            select.classList.add('status-' + newStatus);
+            select.classList.add('is-manual');
+            select.closest('.email-item').dataset.status = newStatus;
+        } else {
+            alert('Erreur lors de la mise à jour du statut.');
+        }
+    });
+});
+
+const checkAll = document.getElementById('check-all');
+const selectionCount = document.getElementById('selection-count');
+
+function getSelectedCompanies(filter = null) {
+    const boxes = [...document.querySelectorAll('.select-email:checked')];
+    const filtered = filter ? boxes.filter(filter) : boxes;
+    return filtered.map(cb => cb.dataset.company);
+}
+
+function updateSelectionCount() {
+    const n = document.querySelectorAll('.select-email:checked').length;
+    if (selectionCount) selectionCount.textContent = `${n} sélectionné(s)`;
+}
+
+if (checkAll) {
+    checkAll.addEventListener('change', () => {
+        document.querySelectorAll('.select-email').forEach(cb => cb.checked = checkAll.checked);
+        updateSelectionCount();
+    });
+}
+document.querySelectorAll('.select-email').forEach(cb => {
+    cb.addEventListener('change', updateSelectionCount);
+});
+
+async function runResetSelected(scope, label) {
+    const companies = getSelectedCompanies();
+    if (!companies.length) { alert('Aucun email sélectionné.'); return; }
+    if (!confirm(`${label} pour ${companies.length} entreprise(s) ?`)) return;
+    const res = await fetch('/api/tracking/reset', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ scope, companies })
+    });
+    const out = await res.json();
+    if (out.ok) location.reload();
+    else alert('Erreur : ' + (out.error || 'inconnue'));
+}
+
+document.getElementById('reset-sent-selected')?.addEventListener('click',
+    () => runResetSelected('sent', 'Retirer de la liste des envois'));
+document.getElementById('reset-processed-selected')?.addEventListener('click',
+    () => runResetSelected('processed', 'Retirer du suivi de génération'));
+
+const sendBtn = document.getElementById('send-selected');
+if (sendBtn) {
+    sendBtn.addEventListener('click', async () => {
+        const selected = [...document.querySelectorAll('.select-email:checked')].map(cb => cb.dataset.company);
+        if (!selected.length) { alert('Aucun email sélectionné.'); return; }
+        if (!confirm(`Envoyer ${selected.length} email(s) ?`)) return;
+
+        const logBox = document.getElementById('log-box');
+        const logContent = document.getElementById('log-content');
+        const logStatus = document.getElementById('log-status');
+        logBox.hidden = false;
+        logContent.textContent = '';
+        logStatus.textContent = 'démarrage…';
+
+        const res = await fetch('/api/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ only: selected })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            logStatus.textContent = 'erreur';
+            logContent.textContent += `[ERROR] ${data.error}\n`;
+            return;
+        }
+        logStatus.textContent = `en cours (${data.job_id})`;
+        const cancelBtnEmails = document.getElementById('btn-cancel-emails');
+        cancelBtnEmails.hidden = false;
+        cancelBtnEmails.disabled = false;
+        cancelBtnEmails.textContent = 'Annuler';
+        cancelBtnEmails.onclick = async () => {
+            cancelBtnEmails.disabled = true;
+            cancelBtnEmails.textContent = 'Annulation…';
+            await fetch(`/api/jobs/${data.job_id}/cancel`, { method: 'POST' });
+        };
+        streamJob(data.job_id, (event) => {
+            const ts = new Date((event.ts || Date.now()/1000) * 1000).toLocaleTimeString();
+            logContent.textContent += `[${ts}] [${(event.type||'info').toUpperCase()}] ${event.message||''}\n`;
+            logContent.scrollTop = logContent.scrollHeight;
+        }, (finalStatus) => {
+            logStatus.textContent = finalStatus;
+            cancelBtnEmails.hidden = true;
+            setTimeout(() => location.reload(), 1500);
+        });
+    });
+}
+
+document.querySelectorAll('.email-item').forEach(item => {
+    const index = item.dataset.index;
+    const status = item.querySelector('.save-status');
+
+    item.querySelector('.save-email').addEventListener('click', async (e) => {
+        const payload = {};
+        item.querySelectorAll('[data-field]').forEach(el => {
+            payload[el.dataset.field] = el.value;
+        });
+        e.target.disabled = true;
+        status.textContent = 'Enregistrement…';
+        status.className = 'save-status saving';
+        try {
+            const res = await fetch(`/api/emails/${index}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const out = await res.json();
+            if (out.ok) {
+                status.textContent = '✓ Enregistré';
+                status.className = 'save-status saved';
+            } else {
+                status.textContent = `✗ ${out.error}`;
+                status.className = 'save-status error';
+            }
+        } catch (err) {
+            status.textContent = `✗ ${err.message}`;
+            status.className = 'save-status error';
+        } finally {
+            e.target.disabled = false;
+        }
+    });
+
+    item.querySelector('.delete-email').addEventListener('click', async () => {
+        if (!confirm(`Supprimer l'email pour ${item.querySelector('.company').textContent} ?`)) return;
+        const res = await fetch(`/api/emails/${index}`, { method: 'DELETE' });
+        if (res.ok) location.reload();
+    });
+
+    item.querySelector('.reset-sent-one')?.addEventListener('click', async (e) => {
+        const company = item.dataset.company;
+        if (!confirm(`Marquer ${company} comme non envoyé ?`)) return;
+        e.target.disabled = true;
+        const res = await fetch('/api/tracking/reset', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ scope: 'sent', companies: [company] })
+        });
+        if (res.ok) location.reload();
+        else e.target.disabled = false;
+    });
+
+    item.querySelector('.test-self').addEventListener('click', async (e) => {
+        const payload = {};
+        item.querySelectorAll('[data-field]').forEach(el => {
+            payload[el.dataset.field] = el.value;
+        });
+        status.textContent = 'Enregistrement + envoi du test…';
+        status.className = 'save-status saving';
+        e.target.disabled = true;
+        try {
+            await fetch(`/api/emails/${index}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const res = await fetch(`/api/emails/${index}/test-self`, { method: 'POST' });
+            const out = await res.json();
+            if (out.ok) {
+                status.textContent = `✓ ${out.message}`;
+                status.className = 'save-status saved';
+            } else {
+                status.textContent = `✗ ${out.error}`;
+                status.className = 'save-status error';
+            }
+        } catch (err) {
+            status.textContent = `✗ ${err.message}`;
+            status.className = 'save-status error';
+        } finally {
+            e.target.disabled = false;
+        }
+    });
+});
+</script>
+{% endblock %}
