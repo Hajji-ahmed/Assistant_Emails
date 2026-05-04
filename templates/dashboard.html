@@ -45,20 +45,18 @@
             {% if stats.emails_sent %}{{ (100 * stats.replies_count // stats.emails_sent) }}% de taux de réponse{% else %}aucun envoi{% endif %}
         </span>
     </div>
-    <div class="stat-card {% if stats.followups_due %}stat-card-alert{% endif %}">
-        <span class="stat-label">Relances dues</span>
-        <span class="stat-value">{{ stats.followups_due }}</span>
-        <span class="stat-sub">
-            {% if stats.followups_due %}après {{ stats.followups_delay_days }} j sans réponse{% else %}tout est à jour · {{ stats.followups_sent }} envoyées{% endif %}
-        </span>
-    </div>
 </section>
 
 <section class="action-panel">
     <h3>Actions</h3>
     <div class="action-row">
         <div class="action-group">
-            <button type="button" class="btn btn-primary" id="btn-generate">Générer les emails</button>
+            <div class="generate-group">
+                <label for="generate-limit" class="inline-label">Nombre :</label>
+                <input type="number" id="generate-limit" class="generate-limit" min="0" max="500"
+                       value="10" placeholder="0 = tout" title="0 ou vide = générer pour toutes les startups éligibles">
+                <button type="button" class="btn btn-primary" id="btn-generate">Générer les emails</button>
+            </div>
             <button type="button" class="btn btn-primary" id="btn-send">Envoyer (tous)</button>
             <button type="button" class="btn" id="btn-check-replies">Vérifier les réponses</button>
             <button type="button" class="btn {% if stats.followups_due %}btn-primary{% endif %}" id="btn-send-followups">
@@ -179,8 +177,18 @@ async function runJob(url, body) {
 }
 
 document.getElementById('btn-generate').addEventListener('click', () => {
-    if (!confirm('Lancer la génération des emails pour toutes les startups non traitées ?')) return;
-    runJob('/api/generate');
+    const limitInput = document.getElementById('generate-limit');
+    const rawLimit = limitInput.value.trim();
+    const limit = rawLimit === '' ? 0 : parseInt(rawLimit, 10);
+    if (Number.isNaN(limit) || limit < 0) {
+        alert('Le nombre doit être un entier positif (ou 0/vide pour tout générer).');
+        return;
+    }
+    const msg = limit > 0
+        ? `Générer ${limit} email(s) ?`
+        : 'Générer pour TOUTES les startups non traitées ?';
+    if (!confirm(msg)) return;
+    runJob('/api/generate', { limit });
 });
 
 document.getElementById('btn-send').addEventListener('click', () => {

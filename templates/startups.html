@@ -2,10 +2,10 @@
 {% block title %}Startups{% endblock %}
 
 {% block content %}
-<header class="page-header">
-    <h2>Startups <span class="count-badge">{{ startups|length }}</span></h2>
-    <p class="subtitle">Édition directe — n'oubliez pas d'enregistrer</p>
-</header>
+<section class="hero hero-compact">
+    <h1 class="hero-title">Entreprises cibles <span class="hero-count">{{ startups|length }}</span></h1>
+    <p class="hero-subtitle">Éditez directement dans le tableau. N'oubliez pas d'enregistrer après vos modifications.</p>
+</section>
 
 <div class="toolbar" id="toolbar">
     <input type="text" id="search-input" class="search-input" placeholder="Rechercher (nom, ville, secteur, contact, email)…">
@@ -15,15 +15,55 @@
         <option value="100">100 / page</option>
         <option value="0">Tout</option>
     </select>
+    <button type="button" class="btn" id="import-btn">Importer</button>
     <button type="button" class="btn" id="add-row">+ Ajouter</button>
     <button type="button" class="btn btn-primary" id="save-btn">Enregistrer</button>
     <span id="save-status" class="save-status"></span>
+</div>
+
+<div class="modal" id="import-modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+        <header class="modal-header">
+            <h3>Importer des startups</h3>
+            <button type="button" class="flash-close" id="import-close" aria-label="Fermer"><span aria-hidden="true">×</span></button>
+        </header>
+        <div class="modal-body">
+            <p class="hint" style="margin-bottom: 16px;">
+                <strong>Champ obligatoire :</strong> l'email. Le <strong>nom de l'entreprise</strong> est dérivé du domaine (ex: <code>hr@pwc.ma</code> → <code>Pwc</code>), le <strong>nom du contact</strong> du local-part s'il suit le format <code>prenom.nom</code>. Les autres champs restent vides — rien n'est inventé.<br>
+                Formats : CSV ou JSON · Doublons (par email) ignorés · Lignes ajoutées en haut du fichier.
+            </p>
+
+            <label class="dropzone" id="dropzone">
+                <input type="file" id="import-file" accept=".csv,.json" hidden>
+                <div class="dropzone-content">
+                    <strong>Glissez votre fichier ici</strong>
+                    <span>ou cliquez pour choisir — max 5 Mo</span>
+                    <span class="dropzone-filename" id="dropzone-filename"></span>
+                </div>
+            </label>
+
+            <div class="import-result" id="import-result" hidden></div>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" class="btn" id="import-cancel">Annuler</button>
+            <button type="button" class="btn btn-primary" id="import-submit" disabled>Importer</button>
+        </footer>
+    </div>
 </div>
 
 <div class="pager" id="pager">
     <button type="button" class="btn" id="prev-page">‹ Précédent</button>
     <span class="pager-info" id="pager-info">—</span>
     <button type="button" class="btn" id="next-page">Suivant ›</button>
+</div>
+
+<div class="pending-banner" id="pending-banner" hidden>
+    <div class="pending-banner-content">
+        <strong><span class="pending-count">0</span> nouvelle(s) ligne(s) à valider</strong>
+        <span>Éditez ou supprimez les entrées en haut du tableau, puis cliquez sur <strong>Enregistrer</strong> pour sauvegarder.</span>
+    </div>
+    <button type="button" class="btn btn-primary pending-save">Enregistrer maintenant</button>
 </div>
 
 <div class="empty-state" id="empty-state" hidden>
@@ -63,6 +103,7 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="{{ url_for('static', filename='js/jobs.js') }}"></script>
 <script>
 const table = document.getElementById('startups-table');
 const status = document.getElementById('save-status');
@@ -131,29 +172,103 @@ pageSizeSelect.addEventListener('change', () => { currentPage = 0; render(); });
 prevBtn.addEventListener('click', () => { currentPage--; render(); });
 nextBtn.addEventListener('click', () => { currentPage++; render(); });
 
-function addRow() {
+const FIELD_ORDER = [
+    'EntrepriseName', 'EntrepriseContactName', 'EntrepriseContactEmail',
+    'EntrepriseVille', 'EntrepriseSecteurActivite', 'EntrepriseTechnologie',
+];
+
+function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[c]);
+}
+
+function createRow(data = {}, isNew = false) {
     const tr = document.createElement('tr');
-    tr.innerHTML = `
-        <td contenteditable="true" data-field="EntrepriseName"></td>
-        <td contenteditable="true" data-field="EntrepriseContactName"></td>
-        <td contenteditable="true" data-field="EntrepriseContactEmail"></td>
-        <td contenteditable="true" data-field="EntrepriseVille"></td>
-        <td contenteditable="true" data-field="EntrepriseSecteurActivite"></td>
-        <td contenteditable="true" data-field="EntrepriseTechnologie"></td>
-        <td><button type="button" class="btn-icon delete-row" title="Supprimer" aria-label="Supprimer cette ligne"><span aria-hidden="true">✕</span></button></td>`;
+    if (isNew) tr.classList.add('is-new');
+    tr.innerHTML = FIELD_ORDER.map(f =>
+        `<td contenteditable="true" data-field="${f}">${escapeHtml(data[f] || '')}</td>`
+    ).join('') + `<td><button type="button" class="btn-icon delete-row" title="Supprimer" aria-label="Supprimer cette ligne"><span aria-hidden="true">✕</span></button></td>`;
+    return tr;
+}
+
+function addRow() {
+    const tr = createRow({}, true);  // manual adds are also "pending until save"
     tbody.insertBefore(tr, tbody.firstChild);
     currentPage = 0;
     searchInput.value = '';
     render();
+    updatePendingBanner();
     tr.querySelector('[contenteditable="true"]').focus();
 }
 document.getElementById('add-row').addEventListener('click', addRow);
 document.getElementById('empty-add-first').addEventListener('click', addRow);
 
-table.addEventListener('click', (e) => {
-    if (e.target.classList.contains('delete-row')) {
-        e.target.closest('tr').remove();
+// Pending banner — shown while rows have been imported but not yet saved
+const pendingBanner = document.getElementById('pending-banner');
+function updatePendingBanner() {
+    const count = tbody.querySelectorAll('tr.is-new').length;
+    if (count === 0) {
+        pendingBanner.hidden = true;
+        return;
+    }
+    pendingBanner.hidden = false;
+    pendingBanner.querySelector('.pending-count').textContent = count;
+}
+
+pendingBanner.querySelector('.pending-save').addEventListener('click', () => {
+    document.getElementById('save-btn').click();
+});
+
+// Warn the user if they try to leave with unsaved import rows
+window.addEventListener('beforeunload', (e) => {
+    if (tbody.querySelectorAll('tr.is-new').length > 0) {
+        e.preventDefault();
+        e.returnValue = '';
+    }
+});
+
+table.addEventListener('click', async (e) => {
+    const deleteBtn = e.target.closest('.delete-row');
+    if (!deleteBtn) return;
+    const row = deleteBtn.closest('tr');
+    const isPending = row.classList.contains('is-new');
+    const company = row.querySelector('[data-field="EntrepriseName"]')?.textContent?.trim() || '(sans nom)';
+
+    if (isPending) {
+        // Pending row: just drop it locally — never persisted to disk.
+        row.remove();
         render();
+        updatePendingBanner();
+        return;
+    }
+
+    // Already-saved row: confirm, then delete on disk immediately.
+    if (!confirm(`Supprimer définitivement « ${company} » du fichier startups.json ?`)) return;
+
+    const email = row.querySelector('[data-field="EntrepriseContactEmail"]')?.textContent?.trim() || '';
+    deleteBtn.disabled = true;
+    try {
+        const res = await fetch('/api/startups/delete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, name: company }),
+        });
+        const out = await res.json();
+        if (!out.ok) {
+            alert('Erreur : ' + (out.error || 'suppression impossible'));
+            deleteBtn.disabled = false;
+            return;
+        }
+        row.remove();
+        render();
+        updatePendingBanner();
+        // Update the count-badge in the page header, if present
+        const badge = document.querySelector('.hero-count, .count-badge');
+        if (badge) badge.textContent = out.remaining;
+    } catch (err) {
+        alert('Erreur réseau : ' + err.message);
+        deleteBtn.disabled = false;
     }
 });
 
@@ -180,6 +295,9 @@ document.getElementById('save-btn').addEventListener('click', async (e) => {
         if (out.ok) {
             status.textContent = `✓ ${out.count} entreprises enregistrées`;
             status.className = 'save-status saved';
+            // New rows are now persisted — clear the "unsaved" markers
+            tbody.querySelectorAll('tr.is-new').forEach(tr => tr.classList.remove('is-new'));
+            updatePendingBanner();
         } else {
             status.textContent = `✗ ${out.error || 'Erreur'}`;
             status.className = 'save-status error';
@@ -193,5 +311,119 @@ document.getElementById('save-btn').addEventListener('click', async (e) => {
 });
 
 render();
+
+// --- Import modal -----------------------------------------------------------
+const modal = document.getElementById('import-modal');
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('import-file');
+const filenameEl = document.getElementById('dropzone-filename');
+const submitBtn = document.getElementById('import-submit');
+const resultEl = document.getElementById('import-result');
+
+function openModal() {
+    modal.hidden = false;
+    resultEl.hidden = true;
+    resultEl.textContent = '';
+    filenameEl.textContent = '';
+    fileInput.value = '';
+    submitBtn.disabled = true;
+}
+function closeModal() { modal.hidden = true; }
+
+document.getElementById('import-btn').addEventListener('click', openModal);
+document.getElementById('import-close').addEventListener('click', closeModal);
+document.getElementById('import-cancel').addEventListener('click', closeModal);
+modal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+
+fileInput.addEventListener('change', () => {
+    if (fileInput.files && fileInput.files[0]) {
+        filenameEl.textContent = fileInput.files[0].name;
+        submitBtn.disabled = false;
+    }
+});
+
+// Drag & drop
+['dragenter', 'dragover'].forEach(evt => {
+    dropzone.addEventListener(evt, (e) => {
+        e.preventDefault(); e.stopPropagation();
+        dropzone.classList.add('dragging');
+    });
+});
+['dragleave', 'drop'].forEach(evt => {
+    dropzone.addEventListener(evt, (e) => {
+        e.preventDefault(); e.stopPropagation();
+        dropzone.classList.remove('dragging');
+    });
+});
+dropzone.addEventListener('drop', (e) => {
+    const files = e.dataTransfer?.files;
+    if (files && files[0]) {
+        fileInput.files = files;
+        filenameEl.textContent = files[0].name;
+        submitBtn.disabled = false;
+    }
+});
+
+submitBtn.addEventListener('click', async () => {
+    if (!fileInput.files || !fileInput.files[0]) return;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Import en cours…';
+    resultEl.hidden = false;
+    resultEl.className = 'import-result saving';
+    resultEl.textContent = 'Analyse du fichier…';
+
+    const form = new FormData();
+    form.append('file', fileInput.files[0]);
+    try {
+        const res = await fetch('/api/startups/import', { method: 'POST', body: form });
+        const data = await res.json();
+        if (!data.ok) {
+            resultEl.className = 'import-result error';
+            resultEl.textContent = `✗ ${data.error || 'Erreur inconnue'}`;
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Importer';
+            return;
+        }
+
+        // Inject the new rows at the top of the table, marked as "is-new".
+        // Reverse so the original file order is preserved after insertBefore.
+        const rows = (data.rows || []).slice().reverse();
+        rows.forEach(r => {
+            const tr = createRow(r, true);
+            tbody.insertBefore(tr, tbody.firstChild);
+        });
+
+        // Hide the empty state + reveal the table if it was the very first import
+        if (rows.length > 0) {
+            document.getElementById('empty-state').hidden = true;
+            document.getElementById('table-wrapper').hidden = false;
+            document.getElementById('pager').hidden = false;
+        }
+
+        currentPage = 0;
+        searchInput.value = '';
+        render();
+        updatePendingBanner();
+
+        resultEl.className = 'import-result success';
+        resultEl.innerHTML = `
+            <strong>Prévisualisation prête.</strong><br>
+            ${data.accepted} ligne(s) à valider · ${data.skipped_duplicates} doublon(s) filtré(s) · ${data.skipped_invalid} sans email
+            <br><small>Les nouvelles lignes sont en haut du tableau en surbrillance. Vérifiez-les puis cliquez <strong>Enregistrer</strong> pour les sauvegarder.</small>
+        `;
+        setTimeout(() => {
+            closeModal();
+            // Scroll to the top of the table so the user sees the new rows
+            tableWrapper.scrollTop = 0;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 1500);
+    } catch (err) {
+        resultEl.className = 'import-result error';
+        resultEl.textContent = `✗ ${err.message}`;
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Importer';
+    }
+});
 </script>
 {% endblock %}

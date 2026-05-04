@@ -1,0 +1,3005 @@
+{
+  "data": [
+    {
+      "EntrepriseName": "Prod'air",
+      "EntrepriseContactName": "GUENNOUN Omar",
+      "EntrepriseContactEmail": "omarguennoun@prodair.net",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;GREEN TECH",
+      "EntrepriseTechnologie": "DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Dyn IT Maroc",
+      "EntrepriseContactName": "BENKHAYAT Imane",
+      "EntrepriseContactEmail": "infos@dynit.ma",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "FORMATION IT",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "ARROW ECS",
+      "EntrepriseContactName": "ABDOU Mariem",
+      "EntrepriseContactEmail": "contact@arrowecs.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Distributeurs/Revendeurs",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ICC MAROC SERVICES",
+      "EntrepriseContactName": "BALLACHA Dounia",
+      "EntrepriseContactEmail": "d.ballacha@iccmaroc.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "APEBI - Fédération des Technologies de l'Information, des Télécommunications et de l'Offshoring",
+      "EntrepriseContactName": "REDOUANE EL HALOUI",
+      "EntrepriseContactEmail": "apebi@apebi.org.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Chambre de Commerce Internationale Maroc",
+      "EntrepriseContactName": "BALLACHA Dounia",
+      "EntrepriseContactEmail": "d.ballacha@iccmaroc.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ADINES MAROC",
+      "EntrepriseContactName": "SASSI MAZROUI",
+      "EntrepriseContactEmail": "commercial@adines.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "VIGEO",
+      "EntrepriseContactName": "LAHLAFI Meriem",
+      "EntrepriseContactEmail": "meriem.lahlafi@vigeo.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Formation/Conseil/Audit",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Maroc Numeric Fund.",
+      "EntrepriseContactName": "Dounia BOUMEHDI",
+      "EntrepriseContactEmail": "contact@mitccapital.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Centre des Jeunes Dirigeants",
+      "EntrepriseContactName": "ESSFADI Nadia",
+      "EntrepriseContactEmail": "info@cjd-maroc.ne",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "AL AKHAWAYN UNIVERSITY",
+      "EntrepriseContactName": "EL HASSOUNI Majdouline",
+      "EntrepriseContactEmail": "m.elhassouni@aui.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Arcanes Technologies",
+      "EntrepriseContactName": "Amine RIADI",
+      "EntrepriseContactEmail": "infos@arcanes.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Formation/Conseil/Audit;Web/Design/Agence de communication;SSII-Intégrateurs",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ITFACTO",
+      "EntrepriseContactName": "TARIK NASSIME",
+      "EntrepriseContactEmail": "nassime.tarik@itfacto.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Pulse Informatique",
+      "EntrepriseContactName": "Khalid KHALILI",
+      "EntrepriseContactEmail": "pulse@pulse.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Distributeurs/Revendeurs",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Réseau Entreprendre Maroc",
+      "EntrepriseContactName": "Elise BROUMM TARHAT",
+      "EntrepriseContactEmail": "ebroumm@reseau-entreprendre.org",
+      "EntrepriseVille": "Casablanca;Rabat;Tanger;Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Happy Ventures",
+      "EntrepriseContactName": "Samir EL AICHAOUI",
+      "EntrepriseContactEmail": "contact@happyventures.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": "Intelligence Artificielle;Réalité Augmentée/Virtuelle;Blockchain;CLOUD;DATA;DRONE;ERP / CRM;IA;IAR,VAR;IMPRESSION 3D;IOT;REALITE AUGMENTEE;REALITE VIRTUELLE;RESEAU ET TELECOM ET SECURITE;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Innovation Process Control",
+      "EntrepriseContactName": "BELGHITI Nasr-Eddine",
+      "EntrepriseContactEmail": "iprc@iprc.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "DATA;RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "Association Enactus Morocco",
+      "EntrepriseContactName": "Tarik SAHRI",
+      "EntrepriseContactEmail": "morocco@enactus.org",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ATRAIT TECHNOLOGIES",
+      "EntrepriseContactName": "AZIZ LEBBADI",
+      "EntrepriseContactEmail": "contact@atrait.eu",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "xHub",
+      "EntrepriseContactName": "EL HOUARI Badr",
+      "EntrepriseContactEmail": "info@x-hub.io",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BCLOUD Consulting",
+      "EntrepriseContactName": "YAZID BERRADA",
+      "EntrepriseContactEmail": "contact@bcloud.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-COMMERCE",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BMCE BANK",
+      "EntrepriseContactName": "Leila Kouraichi EL IDRISSI",
+      "EntrepriseContactEmail": "lkelidrissi@bmcebank.co.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Welearn",
+      "EntrepriseContactName": "Basma RAMZI",
+      "EntrepriseContactEmail": "contact@welearn.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Mosaiclab",
+      "EntrepriseContactName": "ISSAM DAHMAN",
+      "EntrepriseContactEmail": "issam@konta.tech",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": "CLOUD;IA"
+    },
+    {
+      "EntrepriseName": "ZEN NETWORKS",
+      "EntrepriseContactName": "Fayçal Noushi",
+      "EntrepriseContactEmail": "contact@zen-networks.io",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;INDUSTRIE 4.0;CYBERSECURITE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "INSTITUT NATIONAL DES POSTES ET TELECOMMUNICATIONS (INPT)",
+      "EntrepriseContactName": "M. Jamal BENHAMOU",
+      "EntrepriseContactEmail": "j.benhamou@softcentre.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Innovation",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "CYCLAD MAROC",
+      "EntrepriseContactName": "Abderrahim ALLALI",
+      "EntrepriseContactEmail": "abderrahim.allali@cyclad.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM;RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "ACTIVELABS",
+      "EntrepriseContactName": "Anas Elalaoui",
+      "EntrepriseContactEmail": "anas@activelabs.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "ROBOTIQUE;CYBERSECURITE",
+      "EntrepriseTechnologie": "IMPRESSION 3D;REALITE AUGMENTEE;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Inovadex Consulting",
+      "EntrepriseContactName": "NAIF HOUDALI",
+      "EntrepriseContactEmail": "contact@inovadex.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM"
+    },
+    {
+      "EntrepriseName": "HUMAN MARKETING CONSULTING",
+      "EntrepriseContactName": "HIND ELMOUHAJIR",
+      "EntrepriseContactEmail": "contact@humanmarketing.ma",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "OMNISHORE SARL",
+      "EntrepriseContactName": "Lotfi RIFFI",
+      "EntrepriseContactEmail": "lriffi@omnidata.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "ECONER SARL",
+      "EntrepriseContactName": "Ahmed HAYUN",
+      "EntrepriseContactEmail": "ahmed.hayun@econer.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "E-COMMERCE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Skylark Services",
+      "EntrepriseContactName": "Youness AZIZ",
+      "EntrepriseContactEmail": "youness.aziz@skylark.ma",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA"
+    },
+    {
+      "EntrepriseName": "La startup station",
+      "EntrepriseContactName": "ALAOUI HASANI Moulay El Mehdi",
+      "EntrepriseContactEmail": "mehdi@screendy.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "LBA Factory",
+      "EntrepriseContactName": "Fouzi BENTOUNSI",
+      "EntrepriseContactEmail": "bnfouzi@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Positeams SARL",
+      "EntrepriseContactName": "Samir Tamri",
+      "EntrepriseContactEmail": "stamri@positeams.com",
+      "EntrepriseVille": "",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Education Media Company",
+      "EntrepriseContactName": "Adam Bouhadma",
+      "EntrepriseContactEmail": "adam@educationmedia.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DABATEK",
+      "EntrepriseContactName": "Farah Abdelmoumni",
+      "EntrepriseContactEmail": "farah.abdelmoumni@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "INDUSTRIES CULTURELLES",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "gest'up sarl",
+      "EntrepriseContactName": "Mustapha LGHABI",
+      "EntrepriseContactEmail": "gestup.services@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM"
+    },
+    {
+      "EntrepriseName": "DevoTech",
+      "EntrepriseContactName": "Amine HARTY",
+      "EntrepriseContactEmail": "contact@devotech.co",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "Blockchain;DATA"
+    },
+    {
+      "EntrepriseName": "HOUSSNIJOB",
+      "EntrepriseContactName": "Keltoum Houssni",
+      "EntrepriseContactEmail": "houssnijob@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AgenZ SARL",
+      "EntrepriseContactName": "MALIK BELKEZIZ",
+      "EntrepriseContactEmail": "contact@agenz.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "PROPTECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Orange StartOn",
+      "EntrepriseContactName": "Hamza  ELHAMDANI",
+      "EntrepriseContactEmail": "hamza.elhamdani@orange.com",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ODDNET",
+      "EntrepriseContactName": "Ali Yassine BENAMARA",
+      "EntrepriseContactEmail": "contact@odd-net.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "TENORS COMPETENCES",
+      "EntrepriseContactName": "SAFA ZNAGUI",
+      "EntrepriseContactEmail": "imademabrouki@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "SAGIDEV",
+      "EntrepriseContactName": "Anass BERADY",
+      "EntrepriseContactEmail": "anass.berady@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Onedustry Technologies SARL",
+      "EntrepriseContactName": "Saad ERRARHICHE",
+      "EntrepriseContactEmail": "saad.errarhiche@onedustry.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;FINTECH",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "COGNERP NORTH AFRICA /COGNITUS",
+      "EntrepriseContactName": "Mohamed REGHIOUI",
+      "EntrepriseContactEmail": "mreghioui@cognitus.one",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;IA;IOT"
+    },
+    {
+      "EntrepriseName": "I-City",
+      "EntrepriseContactName": "M Nabil ABDESSAMII",
+      "EntrepriseContactEmail": "n.abdessamii@abatechnology.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "IOT;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "CLOUDFRET",
+      "EntrepriseContactName": "Driss Jabar",
+      "EntrepriseContactEmail": "contact@cloudfret.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "E-LOGISTIQUE",
+      "EntrepriseTechnologie": "DATA;IA;IOT"
+    },
+    {
+      "EntrepriseName": "CEED MOROCCO",
+      "EntrepriseContactName": "SAMIR KENBOUR",
+      "EntrepriseContactEmail": "skenbour@ceed-morocco.org",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Dinomite Studios",
+      "EntrepriseContactName": "khalil bennis",
+      "EntrepriseContactEmail": "khail10dev@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;GAMING",
+      "EntrepriseTechnologie": "Réalité Augmentée/Virtuelle;CLOUD;DATA;IA;REALITE AUGMENTEE;REALITE VIRTUELLE"
+    },
+    {
+      "EntrepriseName": "MEDIA FUSION",
+      "EntrepriseContactName": "Said Sakouti",
+      "EntrepriseContactEmail": "contact@mediafusion.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Vetras Electronics",
+      "EntrepriseContactName": "Ahmed ADNANE",
+      "EntrepriseContactEmail": "ah.adnane@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "CLOUD;IA;IOT"
+    },
+    {
+      "EntrepriseName": "Centre Tamkeen",
+      "EntrepriseContactName": "Abdessamad Sentissi",
+      "EntrepriseContactEmail": "a.sentissi@tamkeen.ma",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Id&a tech",
+      "EntrepriseContactName": "ELAQQARI FOUAD",
+      "EntrepriseContactEmail": "contact@idatech.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": "DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DEALKHIR",
+      "EntrepriseContactName": "HAMZA BAKKACH",
+      "EntrepriseContactEmail": "contact@dealkhir.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "E-COMMERCE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Ta7alil2.0",
+      "EntrepriseContactName": "SABRINE ZAHROUBANE",
+      "EntrepriseContactEmail": "contact@ta7alil.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HEALTH TECH",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Prod'air",
+      "EntrepriseContactName": "GUENNOUN Omar",
+      "EntrepriseContactEmail": "omarguennoun@prodair.net",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;GREEN TECH",
+      "EntrepriseTechnologie": "DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Dyn IT Maroc",
+      "EntrepriseContactName": "BENKHAYAT Imane",
+      "EntrepriseContactEmail": "infos@dynit.ma",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "FORMATION IT",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "ARROW ECS",
+      "EntrepriseContactName": "ABDOU Mariem",
+      "EntrepriseContactEmail": "contact@arrowecs.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Distributeurs/Revendeurs",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ICC MAROC SERVICES",
+      "EntrepriseContactName": "BALLACHA Dounia",
+      "EntrepriseContactEmail": "d.ballacha@iccmaroc.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "APEBI - Fédération des Technologies de l'Information, des Télécommunications et de l'Offshoring",
+      "EntrepriseContactName": "REDOUANE EL HALOUI",
+      "EntrepriseContactEmail": "apebi@apebi.org.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Chambre de Commerce Internationale Maroc",
+      "EntrepriseContactName": "BALLACHA Dounia",
+      "EntrepriseContactEmail": "d.ballacha@iccmaroc.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ADINES MAROC",
+      "EntrepriseContactName": "SASSI MAZROUI",
+      "EntrepriseContactEmail": "commercial@adines.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "VIGEO",
+      "EntrepriseContactName": "LAHLAFI Meriem",
+      "EntrepriseContactEmail": "meriem.lahlafi@vigeo.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Formation/Conseil/Audit",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Maroc Numeric Fund.",
+      "EntrepriseContactName": "Dounia BOUMEHDI",
+      "EntrepriseContactEmail": "contact@mitccapital.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Centre des Jeunes Dirigeants",
+      "EntrepriseContactName": "ESSFADI Nadia",
+      "EntrepriseContactEmail": "info@cjd-maroc.ne",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "AL AKHAWAYN UNIVERSITY",
+      "EntrepriseContactName": "EL HASSOUNI Majdouline",
+      "EntrepriseContactEmail": "m.elhassouni@aui.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Arcanes Technologies",
+      "EntrepriseContactName": "Amine RIADI",
+      "EntrepriseContactEmail": "infos@arcanes.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Formation/Conseil/Audit;Web/Design/Agence de communication;SSII-Intégrateurs",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ITFACTO",
+      "EntrepriseContactName": "TARIK NASSIME",
+      "EntrepriseContactEmail": "nassime.tarik@itfacto.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Pulse Informatique",
+      "EntrepriseContactName": "Khalid KHALILI",
+      "EntrepriseContactEmail": "pulse@pulse.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Distributeurs/Revendeurs",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Réseau Entreprendre Maroc",
+      "EntrepriseContactName": "Elise BROUMM TARHAT",
+      "EntrepriseContactEmail": "ebroumm@reseau-entreprendre.org",
+      "EntrepriseVille": "Casablanca;Rabat;Tanger;Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Happy Ventures",
+      "EntrepriseContactName": "Samir EL AICHAOUI",
+      "EntrepriseContactEmail": "contact@happyventures.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": "Intelligence Artificielle;Réalité Augmentée/Virtuelle;Blockchain;CLOUD;DATA;DRONE;ERP / CRM;IA;IAR,VAR;IMPRESSION 3D;IOT;REALITE AUGMENTEE;REALITE VIRTUELLE;RESEAU ET TELECOM ET SECURITE;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Innovation Process Control",
+      "EntrepriseContactName": "BELGHITI Nasr-Eddine",
+      "EntrepriseContactEmail": "iprc@iprc.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "DATA;RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "Association Enactus Morocco",
+      "EntrepriseContactName": "Tarik SAHRI",
+      "EntrepriseContactEmail": "morocco@enactus.org",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ATRAIT TECHNOLOGIES",
+      "EntrepriseContactName": "AZIZ LEBBADI",
+      "EntrepriseContactEmail": "contact@atrait.eu",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "xHub",
+      "EntrepriseContactName": "EL HOUARI Badr",
+      "EntrepriseContactEmail": "info@x-hub.io",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BCLOUD Consulting",
+      "EntrepriseContactName": "YAZID BERRADA",
+      "EntrepriseContactEmail": "contact@bcloud.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-COMMERCE",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BMCE BANK",
+      "EntrepriseContactName": "Leila Kouraichi EL IDRISSI",
+      "EntrepriseContactEmail": "lkelidrissi@bmcebank.co.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Welearn",
+      "EntrepriseContactName": "Basma RAMZI",
+      "EntrepriseContactEmail": "contact@welearn.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Mosaiclab",
+      "EntrepriseContactName": "ISSAM DAHMAN",
+      "EntrepriseContactEmail": "issam@konta.tech",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": "CLOUD;IA"
+    },
+    {
+      "EntrepriseName": "ZEN NETWORKS",
+      "EntrepriseContactName": "Fayçal Noushi",
+      "EntrepriseContactEmail": "contact@zen-networks.io",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;INDUSTRIE 4.0;CYBERSECURITE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "INSTITUT NATIONAL DES POSTES ET TELECOMMUNICATIONS (INPT)",
+      "EntrepriseContactName": "M. Jamal BENHAMOU",
+      "EntrepriseContactEmail": "j.benhamou@softcentre.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Innovation",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "CYCLAD MAROC",
+      "EntrepriseContactName": "Abderrahim ALLALI",
+      "EntrepriseContactEmail": "abderrahim.allali@cyclad.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM;RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "ACTIVELABS",
+      "EntrepriseContactName": "Anas Elalaoui",
+      "EntrepriseContactEmail": "anas@activelabs.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "ROBOTIQUE;CYBERSECURITE",
+      "EntrepriseTechnologie": "IMPRESSION 3D;REALITE AUGMENTEE;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Inovadex Consulting",
+      "EntrepriseContactName": "NAIF HOUDALI",
+      "EntrepriseContactEmail": "contact@inovadex.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM"
+    },
+    {
+      "EntrepriseName": "HUMAN MARKETING CONSULTING",
+      "EntrepriseContactName": "HIND ELMOUHAJIR",
+      "EntrepriseContactEmail": "contact@humanmarketing.ma",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "OMNISHORE SARL",
+      "EntrepriseContactName": "Lotfi RIFFI",
+      "EntrepriseContactEmail": "lriffi@omnidata.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "ECONER SARL",
+      "EntrepriseContactName": "Ahmed HAYUN",
+      "EntrepriseContactEmail": "ahmed.hayun@econer.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "E-COMMERCE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Skylark Services",
+      "EntrepriseContactName": "Youness AZIZ",
+      "EntrepriseContactEmail": "youness.aziz@skylark.ma",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA"
+    },
+    {
+      "EntrepriseName": "La startup station",
+      "EntrepriseContactName": "ALAOUI HASANI Moulay El Mehdi",
+      "EntrepriseContactEmail": "mehdi@screendy.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "PIXELWEB",
+      "EntrepriseContactName": "Tarik Leghnimi Elidrissi",
+      "EntrepriseContactEmail": "contact@pixelweb.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-COMMERCE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "LBA Factory",
+      "EntrepriseContactName": "Fouzi BENTOUNSI",
+      "EntrepriseContactEmail": "bnfouzi@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Precision Systems",
+      "EntrepriseContactName": "Radouane Mastouri",
+      "EntrepriseContactEmail": "contact@precision.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "SMARTBUS",
+      "EntrepriseContactName": "ilyass elfouih",
+      "EntrepriseContactEmail": "contact@smartbus.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "WGENCY",
+      "EntrepriseContactName": "JAHID BEN JILALI",
+      "EntrepriseContactEmail": "teamwgency@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;REALITE AUGMENTEE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Positeams SARL",
+      "EntrepriseContactName": "Samir Tamri",
+      "EntrepriseContactEmail": "stamri@positeams.com",
+      "EntrepriseVille": "",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "JOB2COM",
+      "EntrepriseContactName": "Ilham Boujlid",
+      "EntrepriseContactEmail": "iboujlid@job2vente.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH;HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Education Media Company",
+      "EntrepriseContactName": "Adam Bouhadma",
+      "EntrepriseContactEmail": "adam@educationmedia.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DABATEK",
+      "EntrepriseContactName": "Farah Abdelmoumni",
+      "EntrepriseContactEmail": "farah.abdelmoumni@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "INDUSTRIES CULTURELLES",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "gest'up sarl",
+      "EntrepriseContactName": "Mustapha LGHABI",
+      "EntrepriseContactEmail": "gestup.services@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM"
+    },
+    {
+      "EntrepriseName": "Hsabati",
+      "EntrepriseContactName": "KARIM BENMANSOUR",
+      "EntrepriseContactEmail": "contact@hsabati.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DevoTech",
+      "EntrepriseContactName": "Amine HARTY",
+      "EntrepriseContactEmail": "contact@devotech.co",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "Blockchain;DATA"
+    },
+    {
+      "EntrepriseName": "HOUSSNIJOB",
+      "EntrepriseContactName": "Keltoum Houssni",
+      "EntrepriseContactEmail": "houssnijob@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AgenZ SARL",
+      "EntrepriseContactName": "MALIK BELKEZIZ",
+      "EntrepriseContactEmail": "contact@agenz.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "PROPTECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Orange StartOn",
+      "EntrepriseContactName": "Hamza  ELHAMDANI",
+      "EntrepriseContactEmail": "hamza.elhamdani@orange.com",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "ODDNET",
+      "EntrepriseContactName": "Ali Yassine BENAMARA",
+      "EntrepriseContactEmail": "contact@odd-net.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "TENORS COMPETENCES",
+      "EntrepriseContactName": "SAFA ZNAGUI",
+      "EntrepriseContactEmail": "imademabrouki@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "SAGIDEV",
+      "EntrepriseContactName": "Anass BERADY",
+      "EntrepriseContactEmail": "anass.berady@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Onedustry Technologies SARL",
+      "EntrepriseContactName": "Saad ERRARHICHE",
+      "EntrepriseContactEmail": "saad.errarhiche@onedustry.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;FINTECH",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "COGNERP NORTH AFRICA /COGNITUS",
+      "EntrepriseContactName": "Mohamed REGHIOUI",
+      "EntrepriseContactEmail": "mreghioui@cognitus.one",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;IA;IOT"
+    },
+    {
+      "EntrepriseName": "GE Network",
+      "EntrepriseContactName": "Badr ALMAJDI",
+      "EntrepriseContactEmail": "badr.almajdi@needgen.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "I-City",
+      "EntrepriseContactName": "M Nabil ABDESSAMII",
+      "EntrepriseContactEmail": "n.abdessamii@abatechnology.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "IOT;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "CLOUDFRET",
+      "EntrepriseContactName": "Driss Jabar",
+      "EntrepriseContactEmail": "contact@cloudfret.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "E-LOGISTIQUE",
+      "EntrepriseTechnologie": "DATA;IA;IOT"
+    },
+    {
+      "EntrepriseName": "The Nameless Company",
+      "EntrepriseContactName": "Jalal BENHAMZA",
+      "EntrepriseContactEmail": "j.benhamza@nameless.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "CEED MOROCCO",
+      "EntrepriseContactName": "SAMIR KENBOUR",
+      "EntrepriseContactEmail": "skenbour@ceed-morocco.org",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Dinomite Studios",
+      "EntrepriseContactName": "khalil bennis",
+      "EntrepriseContactEmail": "khail10dev@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;GAMING",
+      "EntrepriseTechnologie": "Réalité Augmentée/Virtuelle;CLOUD;DATA;IA;REALITE AUGMENTEE;REALITE VIRTUELLE"
+    },
+    {
+      "EntrepriseName": "SCA prod",
+      "EntrepriseContactName": "Chaimae DRISSI",
+      "EntrepriseContactEmail": "chaimaedrissi2@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "GREEN TECH;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MEDIA FUSION",
+      "EntrepriseContactName": "Said Sakouti",
+      "EntrepriseContactEmail": "contact@mediafusion.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Vetras Electronics",
+      "EntrepriseContactName": "Ahmed ADNANE",
+      "EntrepriseContactEmail": "ah.adnane@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "CLOUD;IA;IOT"
+    },
+    {
+      "EntrepriseName": "Centre Tamkeen",
+      "EntrepriseContactName": "Abdessamad Sentissi",
+      "EntrepriseContactEmail": "a.sentissi@tamkeen.ma",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Id&a tech",
+      "EntrepriseContactName": "ELAQQARI FOUAD",
+      "EntrepriseContactEmail": "contact@idatech.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": "DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DEALKHIR",
+      "EntrepriseContactName": "HAMZA BAKKACH",
+      "EntrepriseContactEmail": "contact@dealkhir.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "E-COMMERCE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Ta7alil2.0",
+      "EntrepriseContactName": "SABRINE ZAHROUBANE",
+      "EntrepriseContactEmail": "contact@ta7alil.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HEALTH TECH",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Wojod",
+      "EntrepriseContactName": "Abdelmoula Mohamed",
+      "EntrepriseContactEmail": "contact@wojod.fr",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "advance agency",
+      "EntrepriseContactName": "Soufiane Boukhnfr",
+      "EntrepriseContactEmail": "advancedagency.info@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "HD VISION GROUPE",
+      "EntrepriseContactName": "EL OUAAZIZI TAOUFIK",
+      "EntrepriseContactEmail": "cmconsulting@outlook.fr",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MONTBLANC CONSULTING",
+      "EntrepriseContactName": "Kamal Bettar",
+      "EntrepriseContactEmail": "contac@montblancconsulting.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Iosen tech",
+      "EntrepriseContactName": "Zoubair Chaachouh",
+      "EntrepriseContactEmail": "zoubair.chaachouh@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "E-LOGISTIQUE",
+      "EntrepriseTechnologie": "IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BENGY.H SOLUTIONS",
+      "EntrepriseContactName": "BENHED YOUNESS",
+      "EntrepriseContactEmail": "y.benhed@bengyhsolutions.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "QC Tech SARL",
+      "EntrepriseContactName": "Youssef FARHAT",
+      "EntrepriseContactEmail": "youssef.farhat@quiz-coach.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH;HEALTH TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "HumanTech Solutions",
+      "EntrepriseContactName": "KARIM SANAA",
+      "EntrepriseContactEmail": "sanaa@humantech.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "ERP / CRM;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ONLINE DIGITAL MEDIA AGENCY",
+      "EntrepriseContactName": "Khalid Ragrag",
+      "EntrepriseContactEmail": "info@ondma.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "U AXELERATE",
+      "EntrepriseContactName": "Chaimaa Noor El Alaoui",
+      "EntrepriseContactEmail": "chaimae.elalaoui.1995@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH;HEALTH TECH",
+      "EntrepriseTechnologie": "ERP / CRM"
+    },
+    {
+      "EntrepriseName": "ARIST",
+      "EntrepriseContactName": "Hassan SADALI",
+      "EntrepriseContactEmail": "hassan.sadali@arist.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;CYBERSECURITE;FORMATION IT",
+      "EntrepriseTechnologie": "Blockchain;CLOUD;DATA;IA;IOT;RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "GAME UP",
+      "EntrepriseContactName": "OUAHABI Zakariae",
+      "EntrepriseContactEmail": "ouahabi.zakariae@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "GAMING",
+      "EntrepriseTechnologie": "REALITE AUGMENTEE;REALITE VIRTUELLE"
+    },
+    {
+      "EntrepriseName": "DIGI FIRM",
+      "EntrepriseContactName": "MEHNAOUI ADIL",
+      "EntrepriseContactEmail": "a.mehnaoui@digifirm-ma.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "AGRI TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Marka Solution",
+      "EntrepriseContactName": "Kawtar Naim",
+      "EntrepriseContactEmail": "contact@markabr.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "E-COMMERCE;FINTECH",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ACAL Solutions",
+      "EntrepriseContactName": "ABDELAZIZ BENNOUNA",
+      "EntrepriseContactEmail": "a@acal.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;FINTECH",
+      "EntrepriseTechnologie": "CLOUD;IA;IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "IS-TECH",
+      "EntrepriseContactName": "LAQSOUMI OTHMANE",
+      "EntrepriseContactEmail": "olaqsoumi@is-tech.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM;RESEAU ET TELECOM ET SECURITE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Go Branding",
+      "EntrepriseContactName": "Achraf Akanzal",
+      "EntrepriseContactEmail": "contact@gobranding.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "RÉFÉRENCEMENT WEB",
+      "EntrepriseContactName": "Abderrahim GHEZALA",
+      "EntrepriseContactEmail": "aghezala@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ZY DEV SARL",
+      "EntrepriseContactName": "Zoubair Chafik",
+      "EntrepriseContactEmail": "zoubair.chafik@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "HEALTH TECH",
+      "EntrepriseTechnologie": "DATA;IA"
+    },
+    {
+      "EntrepriseName": "Conseil Khatim",
+      "EntrepriseContactName": "Aymane Sninira",
+      "EntrepriseContactEmail": "s.ayman@skillsnsmart.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Alliance Ever",
+      "EntrepriseContactName": "Issam El-asri",
+      "EntrepriseContactEmail": "issam.el-asri@allianceever.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "NOWEDGE SARL",
+      "EntrepriseContactName": "Youssef Jbel",
+      "EntrepriseContactEmail": "contact@nowedge.io",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH;HR TECH",
+      "EntrepriseTechnologie": "DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "PIGMA SYSTEM SARL",
+      "EntrepriseContactName": "DIBY Achmi Gnae",
+      "EntrepriseContactEmail": "contact.erobot@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "E-SPORT;INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Coding Art",
+      "EntrepriseContactName": "OUSMANE SIDIBE",
+      "EntrepriseContactEmail": "contact@codingart.io",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;ERP / CRM;IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "GRAVITON SOLUTIONS",
+      "EntrepriseContactName": "Taoufiq rbouh",
+      "EntrepriseContactEmail": "t.rbouh@graviton.ma",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "AGRI TECH;DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "IOT;RESEAU ET TELECOM ET SECURITE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "EBTIKARWEB",
+      "EntrepriseContactName": "EL MOKHTAR AIT ADDI",
+      "EntrepriseContactEmail": "contact@ebtikarweb.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MZ LOUAFI",
+      "EntrepriseContactName": "EL MEHDI ZAKARIA LOUAFI",
+      "EntrepriseContactEmail": "contact@mzlouafi.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Zenika Technology",
+      "EntrepriseContactName": "Abdellah ZEROUAL",
+      "EntrepriseContactEmail": "info-maroc@zenika.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;CYBERSECURITE;FORMATION IT",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "YOKAMOS SARL",
+      "EntrepriseContactName": "saad haitami",
+      "EntrepriseContactEmail": "saad.haitami@yokamos.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "BIBORNE",
+      "EntrepriseContactName": "BENMOUSSA YASSER",
+      "EntrepriseContactEmail": "yasser@biborne.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ESSANET  MAROC",
+      "EntrepriseContactName": "ESSADEQ MUSTAPHA",
+      "EntrepriseContactEmail": "essanet@essanet.net",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Meriva",
+      "EntrepriseContactName": "Tarik El haddaoui",
+      "EntrepriseContactEmail": "tarik@neurodental.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HEALTH TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "KEKELI ACADEMY",
+      "EntrepriseContactName": "Eli Kwame KUDJIE",
+      "EntrepriseContactEmail": "info@kekeliacademy.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "SONATE TECHNOLOGIE",
+      "EntrepriseContactName": "khadija HUEBRA",
+      "EntrepriseContactEmail": "khadija.huebra@sonate.tech",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Hisneo",
+      "EntrepriseContactName": "Yassine SALAH EDDINE",
+      "EntrepriseContactEmail": "yassine_salah-eddine@hotmail.fr",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;CYBERSECURITE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Euryops",
+      "EntrepriseContactName": "OMAR MOUSTAKIM",
+      "EntrepriseContactEmail": "omar.moustakim@euryops.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "GEOAP",
+      "EntrepriseContactName": "Yassine Hammoud",
+      "EntrepriseContactEmail": "contact@geo-ap.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MARKET SHARE SARL",
+      "EntrepriseContactName": "Yassine El haddadi",
+      "EntrepriseContactEmail": "y.elhaddadi@marketshare.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Noops",
+      "EntrepriseContactName": "Ayoub Mkhantar",
+      "EntrepriseContactEmail": "contact@noops.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Kayan Arts",
+      "EntrepriseContactName": "CHEGDAL ZAKARIA",
+      "EntrepriseContactEmail": "z.chegdal@kayanarts.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Wedo app",
+      "EntrepriseContactName": "Yassit HARIT",
+      "EntrepriseContactEmail": "contact@wedoapp.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BitBot",
+      "EntrepriseContactName": "Bettach Mouad",
+      "EntrepriseContactEmail": "m.bettach@bitbot.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "GREEN TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Marketpill",
+      "EntrepriseContactName": "Amine Mouawad",
+      "EntrepriseContactEmail": "contact@marketpill.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "SG digital and service",
+      "EntrepriseContactName": "Kamal Saghir",
+      "EntrepriseContactEmail": "sg.digitalandservice@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IOT"
+    },
+    {
+      "EntrepriseName": "BIM'R Engineering",
+      "EntrepriseContactName": "Ismail Khoubbaz",
+      "EntrepriseContactEmail": "ismail.khoubbaz@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "IAR,VAR;REALITE VIRTUELLE"
+    },
+    {
+      "EntrepriseName": "Thinksoft solutions",
+      "EntrepriseContactName": "Mohamed Saidi",
+      "EntrepriseContactEmail": "contact@thinksoft.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "EGA SOLUTIONS SARL",
+      "EntrepriseContactName": "Younès El Maslouhi",
+      "EntrepriseContactEmail": "contact@easygocontract.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-GOV",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "SOCIETE SILYA BUSINESS",
+      "EntrepriseContactName": "Abdelmajid Abouali",
+      "EntrepriseContactEmail": "silyabusiness@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Assala Production",
+      "EntrepriseContactName": "Youssra Sliman",
+      "EntrepriseContactEmail": "prodassala@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "E-COMMERCE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "NEXT CONSULTING",
+      "EntrepriseContactName": "Mr.  ATID Abdelillah",
+      "EntrepriseContactEmail": "atid@nextconsulting.org",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "DIGILION AGENCY",
+      "EntrepriseContactName": "Youness Ahddoune",
+      "EntrepriseContactEmail": "younes.ahddoune@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "SOCIETE AFRICAINE DE  L'ORGANISATION ET DE  DEVELOPPEMENT DES METIERS DES  INDEPENDANTS",
+      "EntrepriseContactName": "EL AMRANI LOUBNA",
+      "EntrepriseContactEmail": "maisondelartisan.maroc@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "D-EXPERTS",
+      "EntrepriseContactName": "MAMADOU DIAKITE",
+      "EntrepriseContactEmail": "mamadou.diakite@d-xperts.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;IOT"
+    },
+    {
+      "EntrepriseName": "New Global Electronics",
+      "EntrepriseContactName": "Lamine Brahim",
+      "EntrepriseContactEmail": "lamine@nge-automotive.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "CLOUD;DATA;IOT"
+    },
+    {
+      "EntrepriseName": "10gital",
+      "EntrepriseContactName": "Mohamed Reda MAHRACH",
+      "EntrepriseContactEmail": "contact@10gital.co",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-COMMERCE;MARKETING DIGITAL;FORMATION IT",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Fondation HIBA",
+      "EntrepriseContactName": "KENZA JOULLANAR",
+      "EntrepriseContactEmail": "contact@fondationhiba.ma",
+      "EntrepriseVille": "Tanger;Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "LeMarketing Maroc",
+      "EntrepriseContactName": "Aghmid Soufiane",
+      "EntrepriseContactEmail": "contact@lemarketing.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "SAHAB DEV",
+      "EntrepriseContactName": "Omar BOUCHAARA",
+      "EntrepriseContactEmail": "contact@sahab-dev.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-LOGISTIQUE;INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM;IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Ethical Data Security",
+      "EntrepriseContactName": "zakarya rhafiri",
+      "EntrepriseContactEmail": "contact@securdata.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "DATA"
+    },
+    {
+      "EntrepriseName": "Bewize",
+      "EntrepriseContactName": "Mohamed Mekran",
+      "EntrepriseContactEmail": "mohamed@bewize.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Featury Maroc",
+      "EntrepriseContactName": "Yahya Lazraq",
+      "EntrepriseContactEmail": "contact@featury.io",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "CDA CONSULTING",
+      "EntrepriseContactName": "Zakaria CHEMAOU",
+      "EntrepriseContactEmail": "zchemaou@cda-consulting.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AFFAIRINO",
+      "EntrepriseContactName": "EL HERD MOHAMED",
+      "EntrepriseContactEmail": "direction@affairino.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "TRT POS",
+      "EntrepriseContactName": "ZAKARIA BENJELLOUN",
+      "EntrepriseContactEmail": "trtpos@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DIGITAL4YOU CONSULTING",
+      "EntrepriseContactName": "abdelmoghit chbani",
+      "EntrepriseContactEmail": "chbani111@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Hany & Zen",
+      "EntrepriseContactName": "Ikram LAMRANI",
+      "EntrepriseContactEmail": "contactkounhany@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "E-COMMERCE;E-LOGISTIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Schoolify",
+      "EntrepriseContactName": "Soukaina SAYOURI",
+      "EntrepriseContactEmail": "sokaina.sayouri@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "ERP / CRM"
+    },
+    {
+      "EntrepriseName": "V5 DIGITAL",
+      "EntrepriseContactName": "Ayoub CHALI",
+      "EntrepriseContactEmail": "contact@v5agency.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ISSROAD",
+      "EntrepriseContactName": "Salwa HARIF",
+      "EntrepriseContactEmail": "salwa.harif@issroad.com",
+      "EntrepriseVille": "Casablanca;Rabat;Tanger;Agadir",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "DATA;ERP / CRM;RESEAU ET TELECOM ET SECURITE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Servalog",
+      "EntrepriseContactName": "Alaeddine Oulidi",
+      "EntrepriseContactEmail": "alae.oulidi@servalog.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM"
+    },
+    {
+      "EntrepriseName": "Nostrum Media Sarl",
+      "EntrepriseContactName": "Redouane",
+      "EntrepriseContactEmail": "contact@nostrumedia.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Club Des Dirigeants",
+      "EntrepriseContactName": "DRISS DRIF",
+      "EntrepriseContactEmail": "contact@cdd.ma",
+      "EntrepriseVille": "Casablanca;Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "OPENSCHOOL",
+      "EntrepriseContactName": "MENSOUM Youssef",
+      "EntrepriseContactEmail": "contact@lyceenumerique.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ZAIM DIGITAL",
+      "EntrepriseContactName": "Karim Amguir",
+      "EntrepriseContactEmail": "administration@zaimdigital.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "HIGH IT LAB",
+      "EntrepriseContactName": "Otmane STITOU",
+      "EntrepriseContactEmail": "contact@highitlab.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;FINTECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Hala Techno",
+      "EntrepriseContactName": "Ilyas EL FILAHA",
+      "EntrepriseContactEmail": "go.flutterdev@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "GAS INDUSTY CONSULTING & SERVICES \"GICS\"",
+      "EntrepriseContactName": "YASSINE BELARBI",
+      "EntrepriseContactEmail": "yassine.belarbi55@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "GREEN TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "D&A TRUST",
+      "EntrepriseContactName": "Jérémy DUBOURG",
+      "EntrepriseContactEmail": "jeremy.dubourg@dna-trust.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "TRESORERIE.MA",
+      "EntrepriseContactName": "BERRAHOU HICHAM",
+      "EntrepriseContactEmail": "contact.tresorerie.ma@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;IA;IAR,VAR;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "4 TECH Lab",
+      "EntrepriseContactName": "FAURE ARMAND JEAN ANTOINE",
+      "EntrepriseContactEmail": "armand@4tech.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "1337",
+      "EntrepriseContactName": "",
+      "EntrepriseContactEmail": "bouthir@ocpgroup.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "CENT ONZE FACTORY SARL",
+      "EntrepriseContactName": "Jalal BOUZRARA",
+      "EntrepriseContactEmail": "jalalbouzrara@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Y SCHOOL",
+      "EntrepriseContactName": "ABDELMOUNAIM FAOUZI",
+      "EntrepriseContactEmail": "welcome@yool.education",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AGENCE DIGITALE GZAM  - SARL",
+      "EntrepriseContactName": "EL AJOUZ MOHAMMED AMINE",
+      "EntrepriseContactEmail": "medamine.elajouz@gzamdigitale.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "Blockchain;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "APTUS SOFTWARE",
+      "EntrepriseContactName": "MDARBI Abdeljalil",
+      "EntrepriseContactEmail": "a.mdarbi@aptus.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;ED TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "kenjanoishi",
+      "EntrepriseContactName": "OTHMANE EL MAJID",
+      "EntrepriseContactEmail": "kenjanoishi@email.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;GAMING",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "APPBASE",
+      "EntrepriseContactName": "MOHAMED CHBANI",
+      "EntrepriseContactEmail": "md.chbani@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "HBM Solutions",
+      "EntrepriseContactName": "Adil BENMAKHLOUF",
+      "EntrepriseContactEmail": "adil.benmakhlouf@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;FINTECH;ROBOTIQUE;HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;IOT;ROBOTIQUE"
+    },
+    {
+      "EntrepriseName": "Pazel TECHNOLOGIE",
+      "EntrepriseContactName": "Abdessamad Es-sadki",
+      "EntrepriseContactEmail": "info@pazeltechnologie.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IA;IOT"
+    },
+    {
+      "EntrepriseName": "SHAPEKEY",
+      "EntrepriseContactName": "YASSINE AIT OUFKIR",
+      "EntrepriseContactEmail": "contact@konfigear.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "Réalité Augmentée/Virtuelle;CLOUD;DATA;IA;IAR,VAR;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Solinnova",
+      "EntrepriseContactName": "Yahya SAMADI",
+      "EntrepriseContactEmail": "contact@solinnova.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Apptree",
+      "EntrepriseContactName": "Georges Caron",
+      "EntrepriseContactEmail": "info@apptree.so",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "bytebuild sarl",
+      "EntrepriseContactName": "OUAHMANE YASSINE",
+      "EntrepriseContactEmail": "yassine.ouahmane@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "E-VIA IT SERVICES",
+      "EntrepriseContactName": "MARHOUM FATIMA EZZAHRA",
+      "EntrepriseContactEmail": "info@evia-services.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "C Behind",
+      "EntrepriseContactName": "Boutaina Chaal",
+      "EntrepriseContactEmail": "contact@c-behind.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM"
+    },
+    {
+      "EntrepriseName": "TERRAGIS",
+      "EntrepriseContactName": "HASSANE JARAR OULIDI",
+      "EntrepriseContactEmail": "contact@terragis.org",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "MCISE",
+      "EntrepriseContactName": "Rim Riouch",
+      "EntrepriseContactEmail": "moroccancise@gmail.com",
+      "EntrepriseVille": "Rabat;Tanger",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "DEVTI TECHNOLOGIE",
+      "EntrepriseContactName": "Hicham Berrahou",
+      "EntrepriseContactEmail": "contact.devtitechnologie@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ASSOCIATION TIBU AFRICA",
+      "EntrepriseContactName": "Mohame Amine Zariat",
+      "EntrepriseContactEmail": "contact@tibu.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Axlab",
+      "EntrepriseContactName": "Loubna Sifi",
+      "EntrepriseContactEmail": "info@ax-lab.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;ROBOTIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "AMASOFT",
+      "EntrepriseContactName": "MOUNAJI ABDELALI",
+      "EntrepriseContactEmail": "contact@amasoft.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "Blockchain;CLOUD;DATA;ERP / CRM;IA;IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Caisse de Dépôt et de Gestion",
+      "EntrepriseContactName": "Caisse de Dépôt et de Gestion - Succursale de Tanger",
+      "EntrepriseContactEmail": "cdg@cdg.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "HELP MARIAGE",
+      "EntrepriseContactName": "Lucie Strack",
+      "EntrepriseContactEmail": "helpmariagemaroc@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "E-TOURISME;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "FONDATION MAROCAINE DE L'EDUCATION POUR L'EMPLOI",
+      "EntrepriseContactName": "Laïla EL Amrani",
+      "EntrepriseContactEmail": "l.elamrani@efemaroc.org",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "BTRUST ADVISORY & TECHNOLOGY",
+      "EntrepriseContactName": "Redouane BENATIK",
+      "EntrepriseContactEmail": "redouane.benatik@btrust.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH;CYBERSECURITE;FORMATION IT",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;IOT;RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "AVENIRPRENEUR",
+      "EntrepriseContactName": "Kawtar Bouarich",
+      "EntrepriseContactEmail": "contact@avenirpreneur.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "DATA"
+    },
+    {
+      "EntrepriseName": "DIGITO",
+      "EntrepriseContactName": "Bachir Mellouk",
+      "EntrepriseContactEmail": "contact@digito.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-COMMERCE;MARKETING DIGITAL;CYBERSECURITE;FORMATION IT",
+      "EntrepriseTechnologie": "CLOUD;DATA;DRONE;RESEAU ET TELECOM ET SECURITE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "PayNow",
+      "EntrepriseContactName": "MUSTAPHA EL HAYANY",
+      "EntrepriseContactEmail": "mustapha.elhayany@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "NEXTRONIC",
+      "EntrepriseContactName": "M Nabil ABDESSAMII",
+      "EntrepriseContactEmail": "n.abdessamii@abatechnology.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "AGRI TECH;HEALTH TECH",
+      "EntrepriseTechnologie": "IOT"
+    },
+    {
+      "EntrepriseName": "DEVCORP",
+      "EntrepriseContactName": "M Nabil  ABDESSAMII",
+      "EntrepriseContactEmail": "n.abdessamii@abatechnology.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "SMART ENGINEERING SOLUTION",
+      "EntrepriseContactName": "NAGHMI MARWAN",
+      "EntrepriseContactEmail": "smartengsolution22@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "AGRI TECH",
+      "EntrepriseTechnologie": "DATA;IA;IOT"
+    },
+    {
+      "EntrepriseName": "YAAS IT",
+      "EntrepriseContactName": "Ayadi Abderrahim",
+      "EntrepriseContactEmail": "contact@yaas.fr",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM"
+    },
+    {
+      "EntrepriseName": "MEDIASSIVE",
+      "EntrepriseContactName": "Reda Alami",
+      "EntrepriseContactEmail": "reda@mediassive.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-COMMERCE",
+      "EntrepriseTechnologie": "Blockchain;REALITE VIRTUELLE"
+    },
+    {
+      "EntrepriseName": "YANVISION",
+      "EntrepriseContactName": "Abdellatif WARHOU",
+      "EntrepriseContactEmail": "a.warhou@yanvision.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-COMMERCE;GAMING",
+      "EntrepriseTechnologie": "ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AS Media Group",
+      "EntrepriseContactName": "Saad Jennane",
+      "EntrepriseContactEmail": "saad@sportime.me",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "E-SPORT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "SAPHIR CAISSE",
+      "EntrepriseContactName": "Hamza EL HOB",
+      "EntrepriseContactEmail": "hamzaelhob3@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MOHAMMED GUIJJOU",
+      "EntrepriseContactName": "Mohammed Guijjou",
+      "EntrepriseContactEmail": "m.guijjou@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "WECANDIGITAL SOLUTIONS",
+      "EntrepriseContactName": "YOUNESS RAJJAF",
+      "EntrepriseContactEmail": "younessrajjaf@wecandigitalsolutions.com",
+      "EntrepriseVille": "Casablanca;Rabat;Tanger",
+      "EntrepriseSecteurActivite": "E-COMMERCE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;IA"
+    },
+    {
+      "EntrepriseName": "mlnetworks",
+      "EntrepriseContactName": "JAOUAD MAALOUM",
+      "EntrepriseContactEmail": "jawadmaaloum@mlnetworks.io",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-LOGISTIQUE",
+      "EntrepriseTechnologie": "IA"
+    },
+    {
+      "EntrepriseName": "Artchemist Studio",
+      "EntrepriseContactName": "Brahim AZIZI",
+      "EntrepriseContactEmail": "artchemistudio@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "INDUSTRIES CULTURELLES;GAMING",
+      "EntrepriseTechnologie": "Réalité Augmentée/Virtuelle;CLOUD;IA;IAR,VAR;IMPRESSION 3D;REALITE VIRTUELLE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ESTRELLA BUSINESS",
+      "EntrepriseContactName": "LAILA BOUHOUCH",
+      "EntrepriseContactEmail": "ste.estrella.business@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "VISIOPROCESS",
+      "EntrepriseContactName": "Wafa RHALLAM",
+      "EntrepriseContactEmail": "wafa.rhallam@visioprocess.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "GREEN TECH;INDUSTRIE 4.0;PROPTECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;IOT"
+    },
+    {
+      "EntrepriseName": "ARRA Engineering",
+      "EntrepriseContactName": "el mahdi hmouch",
+      "EntrepriseContactEmail": "e.hmouch@arra-engineering.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;ROBOTIQUE",
+      "EntrepriseTechnologie": "DATA;ERP / CRM;IA;IOT;REALITE VIRTUELLE;ROBOTIQUE"
+    },
+    {
+      "EntrepriseName": "DIGITIS",
+      "EntrepriseContactName": "Meryem KASSOU",
+      "EntrepriseContactEmail": "contact@digitis.ma",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;ED TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AISHORE",
+      "EntrepriseContactName": "Malika Ahmidouch",
+      "EntrepriseContactEmail": "malika@aishore.ai",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "CLOUD;IA"
+    },
+    {
+      "EntrepriseName": "Smart Retail technologies",
+      "EntrepriseContactName": "kamal sadik",
+      "EntrepriseContactEmail": "kamal.sadik@smart-rtl.tech",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MKSTUDIOS Maroc",
+      "EntrepriseContactName": "Ali Mtouny",
+      "EntrepriseContactEmail": "ali.mtouny@mkstudios.fr",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "Réalité Augmentée/Virtuelle"
+    },
+    {
+      "EntrepriseName": "RADI ART AGENCY SARL AU",
+      "EntrepriseContactName": "MOHCINE RHADI",
+      "EntrepriseContactEmail": "radiart.agency@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;DRONE"
+    },
+    {
+      "EntrepriseName": "SMART COLLECTE",
+      "EntrepriseContactName": "ZUHAIR Meriem",
+      "EntrepriseContactEmail": "zuhairmeriem@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "GREEN TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "RUBICON",
+      "EntrepriseContactName": "Badr Bougrine",
+      "EntrepriseContactEmail": "contact@rubicon.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "ERP / CRM;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "OPENMIND TECHNOLOGIES",
+      "EntrepriseContactName": "Ahmed Laadraoui",
+      "EntrepriseContactEmail": "contact@opentecc.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BAKHAT MEDIA",
+      "EntrepriseContactName": "Mme BAKHAT Safae",
+      "EntrepriseContactEmail": "contactbakhatmedia@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DATATIKA",
+      "EntrepriseContactName": "Nor-Eddine Bourouayel",
+      "EntrepriseContactEmail": "contact@datatika.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;INDUSTRIE 4.0;CYBERSECURITE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "HEBERINO",
+      "EntrepriseContactName": "ABDELHADI AMROUCH",
+      "EntrepriseContactEmail": "info.abdelhadiamrouch@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "STE A&T EXPERTS",
+      "EntrepriseContactName": "Mehdi Tchamekh",
+      "EntrepriseContactEmail": "t.mehdi@fdvgroup.fr",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;ED TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "GLOBAL INFLUENCE",
+      "EntrepriseContactName": "Ahmed AIT MEHDI",
+      "EntrepriseContactEmail": "contact@influenceglobale.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "WEBLIFY MEDIA",
+      "EntrepriseContactName": "NOMAN JAWAID MUGHAL",
+      "EntrepriseContactEmail": "noman@openmoveinternational.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "PIXELFORGE",
+      "EntrepriseContactName": "Mohamed Amine Lasri",
+      "EntrepriseContactEmail": "support@clackysolutions.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DIAL TECHNOLOGIES",
+      "EntrepriseContactName": "M Zouheir LAKHDISSI",
+      "EntrepriseContactEmail": "contact@dialy.net",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "E-COMMERCE;ED TECH;GAMING;HEALTH TECH;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ADVERTISER",
+      "EntrepriseContactName": "Abdellah El jehaoui",
+      "EntrepriseContactEmail": "contact@advertiser.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM;IMPRESSION 3D;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "KEY INTELLIGENT TECHNOLOGY",
+      "EntrepriseContactName": "KEY INTELLIGENT TECHNOLOGY",
+      "EntrepriseContactEmail": "contact@keyintelligenttechnology.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ROBOTIQUE",
+      "EntrepriseTechnologie": "DATA;IA"
+    },
+    {
+      "EntrepriseName": "Yo Maroc SARL",
+      "EntrepriseContactName": "Elhoussein Elmatouggui",
+      "EntrepriseContactEmail": "houcine.tc@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-TOURISME;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "SUPART LAB",
+      "EntrepriseContactName": "Amine Hasni",
+      "EntrepriseContactEmail": "contact@supart-lab.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "INDUSTRIES CULTURELLES;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DRONE;IA;IAR,VAR;REALITE VIRTUELLE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "NeoSequence",
+      "EntrepriseContactName": "Ilyas Tabouti",
+      "EntrepriseContactEmail": "ilyas@immosequence.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT;MARKETING DIGITAL;PROPTECH;FORMATION IT",
+      "EntrepriseTechnologie": "Réalité Augmentée/Virtuelle;CLOUD;DATA;DRONE;ERP / CRM;REALITE AUGMENTEE;REALITE VIRTUELLE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "SYGMA.AI",
+      "EntrepriseContactName": "TAOUAF FAYCAL",
+      "EntrepriseContactEmail": "faycal@sygma.ai",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "IA"
+    },
+    {
+      "EntrepriseName": "MEDIA DIALNA",
+      "EntrepriseContactName": "NOUR ELHODA QANCHBOURI",
+      "EntrepriseContactEmail": "contact@mediadialna.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "eaneerdotcom",
+      "EntrepriseContactName": "Youness Ezzahar",
+      "EntrepriseContactEmail": "ezzaharyouness@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "AGRI TECH;DEVELOPPEMENT INFORMATIQUE;GREEN TECH;ROBOTIQUE",
+      "EntrepriseTechnologie": "IOT;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "SYSTEME AND DATA DRIVEN",
+      "EntrepriseContactName": "Driss Bensouda",
+      "EntrepriseContactEmail": "driss.bensouda.s2d@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IA"
+    },
+    {
+      "EntrepriseName": "TALENTECH SOLUTIONS",
+      "EntrepriseContactName": "KARIM BANAOUI",
+      "EntrepriseContactEmail": "banaoui.karim@talentech.solutions",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "WEINDUSTRY",
+      "EntrepriseContactName": "MOUSSA LHOUSSAINE",
+      "EntrepriseContactEmail": "contact@weindustry.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "IMPRESSION 3D;IOT;RESEAU ET TELECOM ET SECURITE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DESIGN LAB",
+      "EntrepriseContactName": "Imane Kachmouni",
+      "EntrepriseContactEmail": "designlab.ma@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AZA PETROSOLUTIONS",
+      "EntrepriseContactName": "ZAKARIA AZEMZI",
+      "EntrepriseContactEmail": "zakaria@aza.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;IOT"
+    },
+    {
+      "EntrepriseName": "MLP Consulting",
+      "EntrepriseContactName": "ZAKARIA ENFILI",
+      "EntrepriseContactEmail": "zakaria.enfili@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "NEXENTECH CONSULTING",
+      "EntrepriseContactName": "Abdessamad NOUNI",
+      "EntrepriseContactEmail": "samadnouni@nexentech.io",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": "IA"
+    },
+    {
+      "EntrepriseName": "Stream Lean industry",
+      "EntrepriseContactName": "AMERMIZ YASSINE",
+      "EntrepriseContactEmail": "yassine.amermiz@streamleanindustry.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Agri Contracting Services sarl",
+      "EntrepriseContactName": "ABDELALI BATOUM",
+      "EntrepriseContactEmail": "agri.contracting.services@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "AGRI TECH;BIO TECH;GREEN TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;DRONE;ERP / CRM"
+    },
+    {
+      "EntrepriseName": "SARAH & ADAM COMMERCE",
+      "EntrepriseContactName": "Adam TAHAR ; Sarah BOUMEDIEN",
+      "EntrepriseContactEmail": "adamtaharpro1@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "DIGITAL STORE BUZZ",
+      "EntrepriseContactName": "AHMED DAOUDI",
+      "EntrepriseContactEmail": "daoudi0307@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "CANAL TECHNOLOGY GROUP",
+      "EntrepriseContactName": "Soufiane  MALEB",
+      "EntrepriseContactEmail": "soufiane.maleb@canaltechnologie.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "IOT;ROBOTIQUE"
+    },
+    {
+      "EntrepriseName": "CLICK DOC",
+      "EntrepriseContactName": "Fatima Zahra BOUAZZAOUI",
+      "EntrepriseContactEmail": "clickdoc.ma@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HEALTH TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "123 click agency",
+      "EntrepriseContactName": "Asmae bouatlaoui",
+      "EntrepriseContactEmail": "sales@123click.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MORIANA CONSULTING",
+      "EntrepriseContactName": "TOUIL KHADIJA",
+      "EntrepriseContactEmail": "contact@moriana.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM"
+    },
+    {
+      "EntrepriseName": "F2A DIGITAL",
+      "EntrepriseContactName": "Abdelquodous Lahchimi",
+      "EntrepriseContactEmail": "a.lahchimi@f2a-digital.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "SVB DEV",
+      "EntrepriseContactName": "ZOUHAIR BROUZI",
+      "EntrepriseContactEmail": "brouzi@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "PROPTECH",
+      "EntrepriseTechnologie": "ERP / CRM"
+    },
+    {
+      "EntrepriseName": "EDRONIC TECHNOLOGIE",
+      "EntrepriseContactName": "EL MEHDI MAHIR",
+      "EntrepriseContactEmail": "mahermehdi33@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;HEALTH TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "SWIFT SOURCING",
+      "EntrepriseContactName": "NOUZHA LABSIME",
+      "EntrepriseContactEmail": "contact@swiftcompany.org",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "E-COMMERCE;E-LOGISTIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AuthentiCom",
+      "EntrepriseContactName": "Khalid Tamraoui",
+      "EntrepriseContactEmail": "tamraoui.khalid@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-LOGISTIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "JADARA FOUNDATION",
+      "EntrepriseContactName": "HIND TOUASSI",
+      "EntrepriseContactEmail": "partenariat@jadara.foundation",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "AI WOLVES",
+      "EntrepriseContactName": "Mohamed KASSOU",
+      "EntrepriseContactEmail": "kassoumohamed@outlook.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "TOUIL DIGICOM",
+      "EntrepriseContactName": "Omar Touil",
+      "EntrepriseContactEmail": "touildigicom@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;ERP / CRM;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Humantal Maroc",
+      "EntrepriseContactName": "Idriss AGOUMI",
+      "EntrepriseContactEmail": "idriss.agoumi@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;HR TECH",
+      "EntrepriseTechnologie": "IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "HARMONASSABA",
+      "EntrepriseContactName": "OTHMAN RAJI",
+      "EntrepriseContactEmail": "contact@harmoservices.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MOOROOT STUDIO",
+      "EntrepriseContactName": "MOHAMMED MEDOUAR",
+      "EntrepriseContactEmail": "mm@mooroot.studio",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MEDIFY",
+      "EntrepriseContactName": "EL MAHDI OUDRHIRI",
+      "EntrepriseContactEmail": "contact@medify.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MonFeed",
+      "EntrepriseContactName": "GUISSER ABDERRAHMANE",
+      "EntrepriseContactEmail": "contact@monfeed.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;IA"
+    },
+    {
+      "EntrepriseName": "YAN AFRICA",
+      "EntrepriseContactName": "Tarik .A",
+      "EntrepriseContactEmail": "contact@yan.africa",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IA;IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Ki2powers",
+      "EntrepriseContactName": "Kaoutar EZZAHAR",
+      "EntrepriseContactEmail": "kaoutar.ezzahar@ki2powers.ma",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "GREEN TECH",
+      "EntrepriseTechnologie": "DATA;IA"
+    },
+    {
+      "EntrepriseName": "appGuru",
+      "EntrepriseContactName": "AAZEDINE SALAH",
+      "EntrepriseContactEmail": "salah.aazedine@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "GAMING",
+      "EntrepriseTechnologie": "IAR,VAR;REALITE AUGMENTEE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "CARTWAY",
+      "EntrepriseContactName": "Rbouh taoufiq",
+      "EntrepriseContactEmail": "rbouh@icloud.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "OLIVE AGENCY MOROCCO",
+      "EntrepriseContactName": "YOUSSEF BOUJLID",
+      "EntrepriseContactEmail": "y.boujlid@olivecommunication.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Mobiconnect Technologies SARL",
+      "EntrepriseContactName": "KHALKI YOUNESS",
+      "EntrepriseContactEmail": "youness.k@mobiconnect.co",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT;DEVELOPPEMENT INFORMATIQUE;CYBERSECURITE;FORMATION IT",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM;IOT;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ScandiTek SARL",
+      "EntrepriseContactName": "Hicham Baili",
+      "EntrepriseContactEmail": "hicham.baili@nexalearn.no",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;ED TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "SMODU",
+      "EntrepriseContactName": "Oussama EL HASSOUANI",
+      "EntrepriseContactEmail": "contact@smodu.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;ERP / CRM;IA;ROBOTIQUE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "I2DS",
+      "EntrepriseContactName": "nabil sanhaji",
+      "EntrepriseContactEmail": "contact@i2ds.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA"
+    },
+    {
+      "EntrepriseName": "MARIAGESDOTIO",
+      "EntrepriseContactName": "Chouaib Rahmouni",
+      "EntrepriseContactEmail": "contact@mariages.io",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "JAAG ADVISORY",
+      "EntrepriseContactName": "ALI GOUMAR",
+      "EntrepriseContactEmail": "aligoumar@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "EVOMARKET",
+      "EntrepriseContactName": "Belahcen Mouad",
+      "EntrepriseContactEmail": "contact@evomarketagency.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "May June Solutions",
+      "EntrepriseContactName": "BENIHYA SAMIR",
+      "EntrepriseContactEmail": "sbenihya@automai.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;ROBOTIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "IBOGA.MA",
+      "EntrepriseContactName": "Hassan Oussouss",
+      "EntrepriseContactEmail": "marociboga@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "E-COMMERCE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "Innovative & Sustainable Solutions",
+      "EntrepriseContactName": "Mustapha CHAFIK",
+      "EntrepriseContactEmail": "mustapha@innosustain.africa",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT;GREEN TECH",
+      "EntrepriseTechnologie": "Blockchain"
+    },
+    {
+      "EntrepriseName": "Wovoiture",
+      "EntrepriseContactName": "EL KHOUATER Mounaim",
+      "EntrepriseContactEmail": "contact@wovoiture.ma",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Prime synergy group",
+      "EntrepriseContactName": "Badr MESSAOUDI",
+      "EntrepriseContactEmail": "b86.messaoudi@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;IA;IMPRESSION 3D;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "WASSIE DEVELOPPEMENT",
+      "EntrepriseContactName": "BELAHCEN LAMIAE",
+      "EntrepriseContactEmail": "lamiae@wassie.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "REFOOD",
+      "EntrepriseContactName": "Ayman JARADAT",
+      "EntrepriseContactEmail": "info@refoodonline.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "GREEN TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "STRATÉGIE TRENTE-DEUX",
+      "EntrepriseContactName": "Alae Boumaiz",
+      "EntrepriseContactEmail": "direction@strategietrentedeux.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ESHIFT",
+      "EntrepriseContactName": "EL MEJDOUBI ADNANE",
+      "EntrepriseContactEmail": "almejdoubi@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IA;RESEAU ET TELECOM ET SECURITE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AH DIGITAL",
+      "EntrepriseContactName": "Hassen Ahlaou",
+      "EntrepriseContactEmail": "contact@ahdigital.tech",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "TECHSTRIDE SOLUTIONS",
+      "EntrepriseContactName": "Mohamed ElHAYADI",
+      "EntrepriseContactEmail": "contact@techstridesolutions.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "AYL AGENCY",
+      "EntrepriseContactName": "Yassmina EZ-ZANGUI",
+      "EntrepriseContactEmail": "contact@aylagency.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;DRONE;ERP / CRM;IAR,VAR;IMPRESSION 3D;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "KHOTWA'PROD",
+      "EntrepriseContactName": "Noura ZNAIDI",
+      "EntrepriseContactEmail": "nora.znaidi.94@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "SGTECH MOROCO",
+      "EntrepriseContactName": "Ana Martínez Rodríguez",
+      "EntrepriseContactEmail": "amr@serviguide.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM"
+    },
+    {
+      "EntrepriseName": "Capture with Ess",
+      "EntrepriseContactName": "YOUSSEF MOUMMOUCH",
+      "EntrepriseContactEmail": "essdigital2020@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;DRONE"
+    },
+    {
+      "EntrepriseName": "EP MASTERS",
+      "EntrepriseContactName": "EP MASTERS",
+      "EntrepriseContactEmail": "mohammed.benbrahim@epmasters.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "OPTICAL TELECOM",
+      "EntrepriseContactName": "Abdellatif Sadik",
+      "EntrepriseContactEmail": "contact@optical-telecom.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "INDUSTRIE 4.0",
+      "EntrepriseTechnologie": "RESEAU ET TELECOM ET SECURITE"
+    },
+    {
+      "EntrepriseName": "DARE COMMUNICATION",
+      "EntrepriseContactName": "LKANDOUCHI AAHD",
+      "EntrepriseContactEmail": "dare@communicationdare.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;IA;IMPRESSION 3D"
+    },
+    {
+      "EntrepriseName": "ARTIZAL",
+      "EntrepriseContactName": "Somayya TAKI",
+      "EntrepriseContactEmail": "contact@artizal.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "E-COMMERCE",
+      "EntrepriseTechnologie": "CLOUD;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "LEADPAL",
+      "EntrepriseContactName": "Merouane Mbarki",
+      "EntrepriseContactEmail": "mmbarki@leadpal.ai",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "From Sand to Green - Maroc",
+      "EntrepriseContactName": "Doha ZAHID",
+      "EntrepriseContactEmail": "doha@sandtogreen.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "AGRI TECH;GREEN TECH",
+      "EntrepriseTechnologie": "CLOUD;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BENIFISC CONSULTING",
+      "EntrepriseContactName": "Oussama BNIBOURK",
+      "EntrepriseContactEmail": "benifisconsulting@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;ERP / CRM"
+    },
+    {
+      "EntrepriseName": "MAGISCOM TECH",
+      "EntrepriseContactName": "MOUHSINE AZIZA",
+      "EntrepriseContactEmail": "magiscom2021@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;ERP / CRM"
+    },
+    {
+      "EntrepriseName": "SAMTRUST",
+      "EntrepriseContactName": "Samia JLIL",
+      "EntrepriseContactEmail": "samia.jlil@samtrust.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;CYBERSECURITE",
+      "EntrepriseTechnologie": "CLOUD;DATA;RESEAU ET TELECOM ET SECURITE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Biker  SOLUTIONS",
+      "EntrepriseContactName": "Ali BELAKBIR",
+      "EntrepriseContactEmail": "alibelakbir8@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "IDEASPARK",
+      "EntrepriseContactName": "SAGHIR AYOUB",
+      "EntrepriseContactEmail": "ayoubsaghir1987@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;HEALTH TECH",
+      "EntrepriseTechnologie": "DATA;ERP / CRM;IA"
+    },
+    {
+      "EntrepriseName": "KLEOS SOLUTIONS",
+      "EntrepriseContactName": "Tarik ARRAD",
+      "EntrepriseContactEmail": "t.arrad@kleos.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IA"
+    },
+    {
+      "EntrepriseName": "Centre Régional d'Investissement Marrakech-Safi",
+      "EntrepriseContactName": "Ranya LAAOUANE",
+      "EntrepriseContactEmail": "r.laaouane@proximity-management.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "WEB4JOBS",
+      "EntrepriseContactName": "FAOUZI ABDELMONAIM",
+      "EntrepriseContactEmail": "abdelmounaim.faouzi@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "FORMATION IT",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DIGITALFORGE",
+      "EntrepriseContactName": "Abdellatif EL ALAMI",
+      "EntrepriseContactEmail": "aelalami@degitalforgeit.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MX4 AI",
+      "EntrepriseContactName": "Abdeljalil Jliouat",
+      "EntrepriseContactEmail": "contact@mx4.ai",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "Symbioz it software consulting",
+      "EntrepriseContactName": "El Mehdi LAMRABET",
+      "EntrepriseContactEmail": "mehdi.lamrabet@symbiozit.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "EXERPLIK",
+      "EntrepriseContactName": "Adil BENMAKHLOUF",
+      "EntrepriseContactEmail": "benmakhlouf.experlik@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "WEBTRIX",
+      "EntrepriseContactName": "Ali Hardane",
+      "EntrepriseContactEmail": "ali.hardanee@gmail.com",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "MEDIA POSTGOO",
+      "EntrepriseContactName": "Adil Elyaagoubi",
+      "EntrepriseContactEmail": "contact@postgoo.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "CYBRFORGE",
+      "EntrepriseContactName": "Hicham FAIK",
+      "EntrepriseContactEmail": "h.faik@cybrforge.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "CYBERSECURITE",
+      "EntrepriseTechnologie": "CLOUD;DATA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "CODEPULSE ST STUDIO",
+      "EntrepriseContactName": "KAMAL KIKIS",
+      "EntrepriseContactEmail": "kamalkikis.contact@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "GAMING",
+      "EntrepriseTechnologie": "IAR,VAR;IMPRESSION 3D;REALITE AUGMENTEE;REALITE VIRTUELLE;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "DYNAAS",
+      "EntrepriseContactName": "",
+      "EntrepriseContactEmail": "contact@dynaas.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "BETA, SOFTWARE DEVELOPMENT",
+      "EntrepriseContactName": "FAHYM Aissa",
+      "EntrepriseContactEmail": "aissahy@hotmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "HOSTINO",
+      "EntrepriseContactName": "Aniss KIASSI",
+      "EntrepriseContactEmail": "aniss@hostino.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD"
+    },
+    {
+      "EntrepriseName": "WCM MARKETING",
+      "EntrepriseContactName": "Ibrahim BOUCHOUF",
+      "EntrepriseContactEmail": "wecaremediagency@gmail.com",
+      "EntrepriseVille": "Tanger",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "IA;IMPRESSION 3D;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "FRDISI",
+      "EntrepriseContactName": "Abdessamad BOUZIDI",
+      "EntrepriseContactEmail": "bouzidi.abdessamad9@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "SM VALLEY",
+      "EntrepriseContactName": "Younes BOUMALEK",
+      "EntrepriseContactEmail": "younes@smvalley.tech",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "M² Square Meter",
+      "EntrepriseContactName": "ABABOU MYRIAM",
+      "EntrepriseContactEmail": "agencesquaremeter@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "E-COMMERCE",
+      "EntrepriseTechnologie": "CLOUD;DATA"
+    },
+    {
+      "EntrepriseName": "MentorClass Academy",
+      "EntrepriseContactName": "Mohammed Amine CHRAIBI",
+      "EntrepriseContactEmail": "amine.chraibi@mentorclassacademy.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "HOOKED DIGITAL",
+      "EntrepriseContactName": "Youness NASR",
+      "EntrepriseContactEmail": "youness@hookeddigital.net",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Coalition Marocaine pour l’Eau « COALMA »",
+      "EntrepriseContactName": "Houria Tazi Sadeq",
+      "EntrepriseContactEmail": "houriatazisadeq@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "MOGIFY AGENCY",
+      "EntrepriseContactName": "Jamal fadil",
+      "EntrepriseContactEmail": "contact@berberstays.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "E-TOURISME;PROPTECH",
+      "EntrepriseTechnologie": "DATA;DRONE"
+    },
+    {
+      "EntrepriseName": "REDIA MAROC SAS",
+      "EntrepriseContactName": "Yassir CHAKIB",
+      "EntrepriseContactEmail": "yassir.chakib@redia-maroc.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;E-GOV",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;IOT"
+    },
+    {
+      "EntrepriseName": "WE DO MARKETING",
+      "EntrepriseContactName": "SOUSSI TAHA YASSINE",
+      "EntrepriseContactEmail": "soussi@wedomkg.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ASK IMPACT",
+      "EntrepriseContactName": "Rajae SLIMANI",
+      "EntrepriseContactEmail": "askimpact.expertise@gmail.com",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "ACCOMPAGNEMENT",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "1755 DEV",
+      "EntrepriseContactName": "MOLLET CHRISTOPHE ALEXANDRE PATRICK",
+      "EntrepriseContactEmail": "christophe.mollet@itss.paris",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "MARKETING DIGITAL",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "ALYA PAY",
+      "EntrepriseContactName": "Brahim ZAID",
+      "EntrepriseContactEmail": "brahim@alyapay.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "FINTECH",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "CYKLE",
+      "EntrepriseContactName": "KOUTARI YOUSSEF",
+      "EntrepriseContactEmail": "cykle.pro@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Wise Systems WS",
+      "EntrepriseContactName": "Mr. BRAHIM CHOUBOU",
+      "EntrepriseContactEmail": "contact@agriwise.ma",
+      "EntrepriseVille": "Agadir",
+      "EntrepriseSecteurActivite": "AGRI TECH;DEVELOPPEMENT INFORMATIQUE",
+      "EntrepriseTechnologie": "ERP / CRM;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "NHANCIT",
+      "EntrepriseContactName": "Imad BENALLAI",
+      "EntrepriseContactEmail": "imad@nhancit.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "HR TECH",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "RELAX AGENCY",
+      "EntrepriseContactName": "Aziza Saghir",
+      "EntrepriseContactEmail": "werelaxagency@gmail.com",
+      "EntrepriseVille": "Essaouira",
+      "EntrepriseSecteurActivite": "DEVELOPPEMENT INFORMATIQUE;MARKETING DIGITAL",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA;TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "Dimacari",
+      "EntrepriseContactName": "Ali AHERDANE",
+      "EntrepriseContactEmail": "ali@dimacari.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "E-COMMERCE;E-LOGISTIQUE;E-TOURISME",
+      "EntrepriseTechnologie": "CLOUD;DATA;IA"
+    },
+    {
+      "EntrepriseName": "AM ORIENTATION",
+      "EntrepriseContactName": "Asmaa\tEL MAHJOUBI",
+      "EntrepriseContactEmail": "elmahjoubi.a@gmail.com",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "ED TECH",
+      "EntrepriseTechnologie": "TECHNOLOGIE WEB / MOBILE"
+    },
+    {
+      "EntrepriseName": "NeuralSouk",
+      "EntrepriseContactName": "Youssef Alami",
+      "EntrepriseContactEmail": "rh@neuralsouk.ma",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Intelligence Artificielle",
+      "EntrepriseTechnologie": "TensorFlow;PyTorch;FastAPI"
+    },
+    {
+      "EntrepriseName": "MedBridge Africa",
+      "EntrepriseContactName": "",
+      "EntrepriseContactEmail": "",
+      "EntrepriseVille": "Rabat",
+      "EntrepriseSecteurActivite": "HealthTech",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Datawise Morocco",
+      "EntrepriseContactName": "",
+      "EntrepriseContactEmail": "",
+      "EntrepriseVille": "",
+      "EntrepriseSecteurActivite": "",
+      "EntrepriseTechnologie": ""
+    },
+    {
+      "EntrepriseName": "Tazi AI",
+      "EntrepriseContactName": "",
+      "EntrepriseContactEmail": "careers@tazi.ai",
+      "EntrepriseVille": "Casablanca",
+      "EntrepriseSecteurActivite": "Machine Learning;Retail Intelligence",
+      "EntrepriseTechnologie": ""
+    }
+
+  ]
+}

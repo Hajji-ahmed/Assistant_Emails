@@ -6,13 +6,18 @@ Generation/send actions come in Phase 4.
 import json
 from pathlib import Path
 from queue import Empty
-from flask import Flask, render_template, request, redirect, url_for, jsonify, flash, Response
+from flask import Flask, render_template, request, redirect, url_for, jsonify, flash, Response, session
 
+from auth import authenticate, current_user
 from config import load_config, save_config, detect_env_drift
 from generate_emails import load_prompt_template, render_prompt, generate_all
 from templates_mgr import (
     ensure_prompts_layout, list_templates, get_meta, load_body, save_body,
     create_template, delete_template, rename_template,
+)
+from startups_import import (
+    parse_file as parse_startups_file,
+    detect_mapping, map_row, merge_at_top, extract_from_email,
 )
 from send_emails import send_all, build_message, send_one
 from send_followups import send_followups, find_due_followups
@@ -56,9 +61,61 @@ app = Flask(
     static_folder=str(BASE_DIR / "static"),
 )
 app.secret_key = "dev-secret-change-in-production"
+app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024  # 5 MB limit on uploads
 
 # Seed default + followup prompt templates on import (idempotent)
 ensure_prompts_layout()
+
+
+# --------------------------------------------------------------------------- #
+# Authentication — login/logout + global session gate
+# --------------------------------------------------------------------------- #
+
+PUBLIC_ENDPOINTS = {"login", "logout", "static"}
+
+
+@app.before_request
+def require_login():
+    """Gate every request behind a valid session, except login and static."""
+    endpoint = request.endpoint or ""
+    if endpoint in PUBLIC_ENDPOINTS:
+        return None
+    if session.get("user_email"):
+        return None
+    # Unauthenticated: JSON callers get 401, browsers get redirected.
+    if request.path.startswith("/api/") or request.is_json:
+        return jsonify({"error": "Authentication required"}), 401
+    return redirect(url_for("login", next=request.path))
+
+
+@app.context_processor
+def inject_user():
+    return {"current_user": current_user()}
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if session.get("user_email"):
+        return redirect(url_for("dashboard"))
+    error = None
+    if request.method == "POST":
+        email = request.form.get("email", "").strip()
+        password = request.form.get("password", "")
+        user = authenticate(email, password)
+        if user:
+            session["user_email"] = user["email"]
+            next_url = request.args.get("next") or request.form.get("next") or url_for("dashboard")
+            if not next_url.startswith("/"):
+                next_url = url_for("dashboard")
+            return redirect(next_url)
+        error = "Email ou mot de passe incorrect."
+    return render_template("login.html", error=error, next=request.args.get("next", ""))
+
+
+@app.route("/logout", methods=["GET", "POST"])
+def logout():
+    session.clear()
+    return redirect(url_for("login"))
 
 
 def safe_load_json(path: Path, default):
@@ -285,6 +342,125 @@ def api_startups_replace():
     return jsonify({"ok": True, "count": len(items)})
 
 
+@app.route("/api/startups/delete", methods=["POST"])
+def api_startups_delete():
+    """Delete one startup from startups.json.
+
+    Identifies the row by email (case-insensitive) if provided, else by name.
+    Returns 404 if no match. Only removes the FIRST match — duplicates are
+    left in place so the user can retry.
+    """
+    payload = request.get_json(silent=True) or {}
+    email = (payload.get("email") or "").strip().lower()
+    name = (payload.get("name") or "").strip().lower()
+
+    if not email and not name:
+        return jsonify({"ok": False, "error": "email ou name requis"}), 400
+
+    cfg = load_config()
+    path = resolve(cfg["files"]["startups"])
+    data = safe_load_json(path, {"data": []})
+    items = data.get("data", []) if isinstance(data, dict) else data
+
+    for i, s in enumerate(items):
+        s_email = (s.get("EntrepriseContactEmail") or "").strip().lower()
+        s_name = (s.get("EntrepriseName") or "").strip().lower()
+        match = False
+        if email and s_email == email:
+            match = True
+        elif not email and name and s_name == name:
+            match = True
+        if match:
+            removed = items.pop(i)
+            save_json(path, {"data": items})
+            return jsonify({
+                "ok": True,
+                "removed": removed.get("EntrepriseName") or removed.get("EntrepriseContactEmail") or "",
+                "remaining": len(items),
+            })
+
+    return jsonify({"ok": False, "error": "Startup introuvable dans le fichier."}), 404
+
+
+@app.route("/api/startups/import", methods=["POST"])
+def api_startups_import():
+    """Parse an uploaded CSV/JSON file and return the extracted rows WITHOUT
+    saving them. The client injects them at the top of the table as pending;
+    the user validates (edits / deletes individual rows if needed) and clicks
+    "Enregistrer" to persist via the existing PUT /api/startups endpoint.
+
+    Required field: EntrepriseContactEmail. Name + contact are derived from
+    the email itself (domain / local-part). Other fields stay empty.
+    Duplicates (by email) against the already-saved file are filtered out.
+    """
+    f = request.files.get("file")
+    if not f or not f.filename:
+        return jsonify({"ok": False, "error": "Aucun fichier fourni."}), 400
+
+    content = f.read()
+    if not content:
+        return jsonify({"ok": False, "error": "Fichier vide."}), 400
+
+    try:
+        raw_rows, headers = parse_startups_file(f.filename, content)
+    except ValueError as e:
+        return jsonify({"ok": False, "error": str(e)}), 400
+    except Exception as e:
+        return jsonify({"ok": False, "error": f"Erreur de lecture : {type(e).__name__}: {e}"}), 400
+
+    mapping = detect_mapping(headers)
+    if "EntrepriseContactEmail" not in mapping.values():
+        return jsonify({
+            "ok": False,
+            "error": ("Colonne email manquante. L'email est obligatoire. "
+                      "Entêtes détectées : " + ", ".join(headers or ["(aucune)"])),
+        }), 400
+
+    mapped_rows = [map_row(r, mapping) for r in raw_rows if isinstance(r, dict)]
+    extract_from_email(mapped_rows)
+
+    # Dedup against what's already persisted on disk
+    cfg = load_config()
+    startups_path = resolve(cfg["files"]["startups"])
+    existing = safe_load_json(startups_path, {"data": []})
+    existing_items = existing.get("data", []) if isinstance(existing, dict) else existing
+    existing_emails = {
+        (s.get("EntrepriseContactEmail") or "").strip().lower()
+        for s in existing_items
+        if s.get("EntrepriseContactEmail")
+    }
+
+    new_rows = []
+    skipped_invalid = 0
+    skipped_duplicates = 0
+    seen_in_batch = set()
+    for r in mapped_rows:
+        email = (r.get("EntrepriseContactEmail") or "").strip()
+        if not email or "@" not in email:
+            skipped_invalid += 1
+            continue
+        low = email.lower()
+        if low in existing_emails or low in seen_in_batch:
+            skipped_duplicates += 1
+            continue
+        seen_in_batch.add(low)
+        new_rows.append(r)
+
+    return jsonify({
+        "ok": True,
+        "rows": new_rows,
+        "accepted": len(new_rows),
+        "skipped_duplicates": skipped_duplicates,
+        "skipped_invalid": skipped_invalid,
+        "total_seen": len(mapped_rows),
+    })
+
+
+@app.errorhandler(413)
+def handle_too_large(_e):
+    return jsonify({"ok": False, "error": "Fichier trop volumineux (max 5 Mo)."}), 413
+
+
 @app.route("/emails")
 def emails_page():
     cfg = load_config()
@@ -302,6 +478,11 @@ def emails_page():
         e["_status"] = status
         e["_status_manual"] = is_manual
         status_counts[status] += 1
+
+    # Drafts on top, then everything else. Stable sort preserves file order
+    # inside each group (so the most recently generated draft stays first).
+    status_priority = {s: i for i, s in enumerate(STATUS_ORDER)}
+    emails.sort(key=lambda e: status_priority.get(e["_status"], 99))
 
     return render_template(
         "emails.html",
@@ -391,9 +572,17 @@ def api_generate():
 
     payload = request.get_json(silent=True) or {}
     template_id = payload.get("template_id")
+    raw_limit = payload.get("limit")
+    try:
+        limit = int(raw_limit) if raw_limit not in (None, "", 0, "0") else 0
+    except (TypeError, ValueError):
+        return jsonify({"error": "'limit' doit être un entier positif."}), 400
+    if limit < 0:
+        return jsonify({"error": "'limit' doit être >= 0 (0 = illimité)."}), 400
 
     def target(on_progress, should_stop):
-        return generate_all(cfg, on_progress=on_progress, should_stop=should_stop, template_id=template_id)
+        return generate_all(cfg, on_progress=on_progress, should_stop=should_stop,
+                            template_id=template_id, limit=limit)
 
     try:
         job_id = job_manager.start(target, "generate")
@@ -500,6 +689,40 @@ def api_replies_remove(company):
         save_json(path, tracking)
         return jsonify({"ok": True})
     return jsonify({"ok": False, "error": "Réponse introuvable"}), 404
+
+
+@app.route("/replies")
+def replies_page():
+    """Manage detected replies: view, change status, delete, open in Gmail."""
+    cfg = load_config()
+    tracking = safe_load_json(resolve(cfg["files"]["tracking"]), {})
+    replies = tracking.get("replies") or {}
+    # Build list of reply records sorted by date (most recent first)
+    items = []
+    for company, data in replies.items():
+        status, is_manual = resolve_status(company, tracking)
+        items.append({
+            "company": company,
+            "reply_date": data.get("reply_date", ""),
+            "reply_subject": data.get("reply_subject", ""),
+            "reply_preview": data.get("reply_preview", ""),
+            "from": data.get("from", ""),
+            "status": status,
+            "status_label": STATUS_LABELS.get(status, status),
+            "status_manual": is_manual,
+        })
+    items.sort(key=lambda r: r["reply_date"], reverse=True)
+
+    # Status options for the pipeline buttons (excluding auto-derived ones
+    # that happen implicitly — interview/offer/rejected/abandoned are the
+    # useful manual actions from the "replied" state).
+    manual_statuses = ["replied", "interview", "offer", "rejected", "abandoned"]
+    return render_template(
+        "replies.html",
+        replies=items,
+        status_labels=STATUS_LABELS,
+        manual_statuses=manual_statuses,
+    )
 
 
 @app.route("/api/jobs/current")

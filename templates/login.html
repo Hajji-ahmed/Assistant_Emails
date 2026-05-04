@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion — Internship Mailer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body class="login-body">
+    <main class="login-container">
+        <div class="login-card">
+            <header class="login-header">
+                <h1>Internship Mailer</h1>
+                <p class="subtitle">Connectez-vous pour continuer</p>
+            </header>
+
+            {% if error %}
+            <div class="flash flash-error login-error">{{ error }}</div>
+            {% endif %}
+
+            <form method="POST" class="login-form">
+                <input type="hidden" name="next" value="{{ next }}">
+                <label for="email">
+                    <span>Email</span>
+                    <input type="email" id="email" name="email" autocomplete="username" required autofocus>
+                </label>
+                <label for="password">
+                    <span>Mot de passe</span>
+                    <input type="password" id="password" name="password" autocomplete="current-password" required>
+                </label>
+                <button type="submit" class="btn btn-primary login-submit">Se connecter</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

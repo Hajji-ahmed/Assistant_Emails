@@ -12,6 +12,7 @@ generated_emails.json
 startups.json
 resume.json
 config.json
+users.json
 
 # Python
 __pycache__/

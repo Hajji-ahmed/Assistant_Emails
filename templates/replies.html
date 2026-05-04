@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% block title %}Réponses{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h2>Réponses <span class="count-badge">{{ replies|length }}</span></h2>
+    <p class="subtitle">Gérez les réponses reçues des recruteurs</p>
+</header>
+
+<div class="toolbar">
+    <button type="button" class="btn btn-primary" id="btn-refresh-replies">Rechercher de nouvelles réponses</button>
+    <span class="save-status" id="refresh-status"></span>
+</div>
+
+<div class="log-box compact" id="log-box" hidden>
+    <div class="log-header">
+        <span>Scan en cours</span>
+        <span class="log-header-right">
+            <button type="button" class="btn-cancel" id="btn-cancel-scan" hidden>Annuler</button>
+            <span id="log-status" class="log-status">—</span>
+        </span>
+    </div>
+    <pre id="log-content"></pre>
+</div>
+
+{% if not replies %}
+<div class="empty-state">
+    <h3>Aucune réponse détectée</h3>
+    <p>Lancez un scan IMAP depuis le bouton ci-dessus pour détecter les réponses des recruteurs.</p>
+</div>
+{% else %}
+<div class="reply-list">
+    {% for r in replies %}
+    <article class="reply-card status-{{ r.status }}" data-company="{{ r.company }}">
+        <header class="reply-header">
+            <div class="reply-head-left">
+                <h3 class="reply-company" title="{{ r.company }}">{{ r.company }}</h3>
+                <div class="reply-meta">
+                    <span class="reply-from" title="{{ r['from'] }}">{{ r['from'] }}</span>
+                    <span class="reply-date">{{ r.reply_date[:10] }}</span>
+                </div>
+            </div>
+            <span class="badge status-badge status-badge-{{ r.status }}">
+                {{ r.status_label }}{% if r.status_manual %} ·{% endif %}
+            </span>
+        </header>
+
+        <div class="reply-subject" title="{{ r.reply_subject }}">
+            <strong>Sujet :</strong> {{ r.reply_subject }}
+        </div>
+
+        <div class="reply-preview">{{ r.reply_preview }}</div>
+
+        <div class="reply-actions">
+            <div class="status-group">
+                <span class="status-group-label">Statut :</span>
+                {% for s in manual_statuses %}
+                <button type="button" class="status-btn {% if r.status == s %}active{% endif %}"
+                        data-status="{{ s }}">{{ status_labels[s] }}</button>
+                {% endfor %}
+            </div>
+            <div class="reply-tools">
+                <a href="https://mail.google.com/mail/u/0/#search/from:{{ r['from']|urlencode }}"
+                   target="_blank" rel="noopener" class="btn btn-link">Ouvrir dans Gmail</a>
+                <button type="button" class="btn btn-danger reply-delete">Supprimer</button>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/jobs.js') }}"></script>
+<script>
+// --- Refresh replies (launches the IMAP scan and streams the log) ---
+const refreshBtn = document.getElementById('btn-refresh-replies');
+const refreshStatus = document.getElementById('refresh-status');
+const logBox = document.getElementById('log-box');
+const logContent = document.getElementById('log-content');
+const logStatus = document.getElementById('log-status');
+
+refreshBtn.addEventListener('click', async () => {
+    refreshBtn.disabled = true;
+    refreshStatus.textContent = '';
+    refreshStatus.className = 'save-status saving';
+    refreshStatus.textContent = 'Démarrage…';
+    logBox.hidden = false;
+    logContent.textContent = '';
+    logStatus.textContent = '—';
+
+    try {
+        const res = await fetch('/api/check-replies', { method: 'POST' });
+        const data = await res.json();
+        if (!res.ok) {
+            refreshStatus.className = 'save-status error';
+            refreshStatus.textContent = `✗ ${data.error || 'Erreur'}`;
+            refreshBtn.disabled = false;
+            return;
+        }
+        refreshStatus.textContent = `Job ${data.job_id}`;
+        const cancelBtn = document.getElementById('btn-cancel-scan');
+        cancelBtn.hidden = false;
+        cancelBtn.disabled = false;
+        cancelBtn.textContent = 'Annuler';
+        cancelBtn.onclick = async () => {
+            cancelBtn.disabled = true;
+            cancelBtn.textContent = 'Annulation…';
+            await fetch(`/api/jobs/${data.job_id}/cancel`, { method: 'POST' });
+        };
+        streamJob(data.job_id, (event) => {
+            const ts = new Date((event.ts || Date.now()/1000) * 1000).toLocaleTimeString();
+            logContent.textContent += `[${ts}] [${(event.type||'info').toUpperCase()}] ${event.message||''}\n`;
+            logContent.scrollTop = logContent.scrollHeight;
+        }, (finalStatus) => {
+            logStatus.textContent = finalStatus;
+            cancelBtn.hidden = true;
+            setTimeout(() => location.reload(), 1500);
+        });
+    } catch (e) {
+        refreshStatus.className = 'save-status error';
+        refreshStatus.textContent = `✗ ${e.message}`;
+        refreshBtn.disabled = false;
+    }
+});
+
+// --- Per-card actions: change status, delete reply ---
+document.querySelectorAll('.reply-card').forEach(card => {
+    const company = card.dataset.company;
+
+    card.querySelectorAll('.status-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const status = btn.dataset.status;
+            btn.disabled = true;
+            const res = await fetch(`/api/status/${encodeURIComponent(company)}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status })
+            });
+            if (res.ok) {
+                // Visually update: remove "active" from siblings, set on this one
+                card.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Update the badge text and color
+                const badge = card.querySelector('.status-badge');
+                if (badge) {
+                    const label = btn.textContent.trim();
+                    badge.textContent = label + ' ·';
+                    badge.className = 'badge status-badge status-badge-' + status;
+                    card.className = 'reply-card status-' + status;
+                }
+            }
+            btn.disabled = false;
+        });
+    });
+
+    card.querySelector('.reply-delete').addEventListener('click', async () => {
+        if (!confirm(`Supprimer la réponse de ${company} ? (le prochain scan pourra la redétecter)`)) return;
+        const res = await fetch(`/api/replies/${encodeURIComponent(company)}`, { method: 'DELETE' });
+        if (res.ok) location.reload();
+    });
+});
+</script>
+{% endblock %}

@@ -2,10 +2,10 @@
 {% block title %}Emails générés{% endblock %}
 
 {% block content %}
-<header class="page-header">
-    <h2>Emails générés <span class="count-badge">{{ emails|length }}</span></h2>
-    <p class="subtitle">Prévisualisez, modifiez, supprimez ou envoyez</p>
-</header>
+<section class="hero hero-compact">
+    <h1 class="hero-title">Emails générés <span class="hero-count">{{ emails|length }}</span></h1>
+    <p class="hero-subtitle">Prévisualisez, modifiez, suivez les statuts de vos candidatures.</p>
+</section>
 
 {% if emails %}
 <div class="status-filter">

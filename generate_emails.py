@@ -79,7 +79,7 @@ def generate_single(client, model, temperature, max_tokens, prompt):
     return parse_email_response(email_text)
 
 
-def generate_all(config, on_progress=None, should_stop=None, template_id=None):
+def generate_all(config, on_progress=None, should_stop=None, template_id=None, limit=None):
     """Generate emails for every startup that hasn't been processed yet.
 
     Args:
@@ -90,6 +90,8 @@ def generate_all(config, on_progress=None, should_stop=None, template_id=None):
             next iteration (checked before each startup).
         template_id: optional template id to use. Defaults to
             config["prompts"]["active"] (the selected campaign template).
+        limit: optional int — stop after generating this many new emails.
+            None or 0 means generate for all eligible startups.
     Returns:
         dict with counts: {"generated": int, "skipped": int, "errors": int, "total": int}
     """
@@ -140,9 +142,18 @@ def generate_all(config, on_progress=None, should_stop=None, template_id=None):
 
     counts = {"generated": 0, "skipped": 0, "errors": 0, "total": len(startups)}
 
+    # Normalize limit: None or 0 means "no limit"
+    limit = int(limit) if limit else 0
+    if limit > 0:
+        emit("info", f"Limite définie : {limit} email(s) maximum.")
+
     for s in startups:
         if should_stop and should_stop():
             emit("cancelled", "Génération annulée par l'utilisateur.")
+            break
+
+        if limit > 0 and counts["generated"] >= limit:
+            emit("info", f"Limite de {limit} atteinte. Arrêt de la génération.")
             break
 
         company_name = s.get('EntrepriseName', 'Unknown Company')
@@ -168,7 +179,8 @@ def generate_all(config, on_progress=None, should_stop=None, template_id=None):
                 "email_body": body,
                 "template_id": tpl_id,
             }
-            existing_emails.append(email_obj)
+            # Prepend so the newest draft always shows first on /emails
+            existing_emails.insert(0, email_obj)
             save_json(emails_path, existing_emails)
 
             tracking["processed_companies"].append(company_name)
