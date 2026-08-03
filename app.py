@@ -1,3 +1,4 @@
+
 """Flask entrypoint for the Internship Email Campaign Manager.
 
 Phase 3: dashboard + config + prompt editor + startups + emails pages.
@@ -6,9 +7,8 @@ Generation/send actions come in Phase 4.
 import json
 from pathlib import Path
 from queue import Empty
-from flask import Flask, render_template, request, redirect, url_for, jsonify, flash, Response, session
+from flask import Flask, render_template, request, redirect, url_for, jsonify, flash, Response
 
-from auth import authenticate, current_user
 from config import load_config, save_config, detect_env_drift
 from generate_emails import load_prompt_template, render_prompt, generate_all
 from templates_mgr import (
@@ -65,57 +65,6 @@ app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024  # 5 MB limit on uploads
 
 # Seed default + followup prompt templates on import (idempotent)
 ensure_prompts_layout()
-
-
-# --------------------------------------------------------------------------- #
-# Authentication — login/logout + global session gate
-# --------------------------------------------------------------------------- #
-
-PUBLIC_ENDPOINTS = {"login", "logout", "static"}
-
-
-@app.before_request
-def require_login():
-    """Gate every request behind a valid session, except login and static."""
-    endpoint = request.endpoint or ""
-    if endpoint in PUBLIC_ENDPOINTS:
-        return None
-    if session.get("user_email"):
-        return None
-    # Unauthenticated: JSON callers get 401, browsers get redirected.
-    if request.path.startswith("/api/") or request.is_json:
-        return jsonify({"error": "Authentication required"}), 401
-    return redirect(url_for("login", next=request.path))
-
-
-@app.context_processor
-def inject_user():
-    return {"current_user": current_user()}
-
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if session.get("user_email"):
-        return redirect(url_for("dashboard"))
-    error = None
-    if request.method == "POST":
-        email = request.form.get("email", "").strip()
-        password = request.form.get("password", "")
-        user = authenticate(email, password)
-        if user:
-            session["user_email"] = user["email"]
-            next_url = request.args.get("next") or request.form.get("next") or url_for("dashboard")
-            if not next_url.startswith("/"):
-                next_url = url_for("dashboard")
-            return redirect(next_url)
-        error = "Email ou mot de passe incorrect."
-    return render_template("login.html", error=error, next=request.args.get("next", ""))
-
-
-@app.route("/logout", methods=["GET", "POST"])
-def logout():
-    session.clear()
-    return redirect(url_for("login"))
 
 
 def safe_load_json(path: Path, default):
@@ -470,13 +419,17 @@ def emails_page():
     replies = tracking.get("replies", {})
 
     status_counts = {s: 0 for s in STATUS_ORDER}
-    for e in emails:
+    for i, e in enumerate(emails):
         company = e.get("company_name")
         e["_sent"] = company in sent
         e["_reply"] = replies.get(company)
         status, is_manual = resolve_status(company, tracking)
         e["_status"] = status
         e["_status_manual"] = is_manual
+        # Position in the *file*, captured before the sort below. The API
+        # routes address emails by their index in generated_emails.json, so
+        # the template must emit this — not the post-sort loop index.
+        e["_index"] = i
         status_counts[status] += 1
 
     # Drafts on top, then everything else. Stable sort preserves file order
@@ -572,17 +525,21 @@ def api_generate():
 
     payload = request.get_json(silent=True) or {}
     template_id = payload.get("template_id")
-    raw_limit = payload.get("limit")
     try:
-        limit = int(raw_limit) if raw_limit not in (None, "", 0, "0") else 0
+        limit = int(payload.get("limit") or 0)
     except (TypeError, ValueError):
-        return jsonify({"error": "'limit' doit être un entier positif."}), 400
+        return jsonify({"error": "limit doit être un nombre."}), 400
     if limit < 0:
-        return jsonify({"error": "'limit' doit être >= 0 (0 = illimité)."}), 400
+        return jsonify({"error": "limit doit être positif."}), 400
 
     def target(on_progress, should_stop):
-        return generate_all(cfg, on_progress=on_progress, should_stop=should_stop,
-                            template_id=template_id, limit=limit)
+        return generate_all(
+            cfg,
+            on_progress=on_progress,
+            should_stop=should_stop,
+            template_id=template_id,
+            limit=limit,
+        )
 
     try:
         job_id = job_manager.start(target, "generate")
@@ -689,40 +646,6 @@ def api_replies_remove(company):
         save_json(path, tracking)
         return jsonify({"ok": True})
     return jsonify({"ok": False, "error": "Réponse introuvable"}), 404
-
-
-@app.route("/replies")
-def replies_page():
-    """Manage detected replies: view, change status, delete, open in Gmail."""
-    cfg = load_config()
-    tracking = safe_load_json(resolve(cfg["files"]["tracking"]), {})
-    replies = tracking.get("replies") or {}
-    # Build list of reply records sorted by date (most recent first)
-    items = []
-    for company, data in replies.items():
-        status, is_manual = resolve_status(company, tracking)
-        items.append({
-            "company": company,
-            "reply_date": data.get("reply_date", ""),
-            "reply_subject": data.get("reply_subject", ""),
-            "reply_preview": data.get("reply_preview", ""),
-            "from": data.get("from", ""),
-            "status": status,
-            "status_label": STATUS_LABELS.get(status, status),
-            "status_manual": is_manual,
-        })
-    items.sort(key=lambda r: r["reply_date"], reverse=True)
-
-    # Status options for the pipeline buttons (excluding auto-derived ones
-    # that happen implicitly — interview/offer/rejected/abandoned are the
-    # useful manual actions from the "replied" state).
-    manual_statuses = ["replied", "interview", "offer", "rejected", "abandoned"]
-    return render_template(
-        "replies.html",
-        replies=items,
-        status_labels=STATUS_LABELS,
-        manual_statuses=manual_statuses,
-    )
 
 
 @app.route("/api/jobs/current")

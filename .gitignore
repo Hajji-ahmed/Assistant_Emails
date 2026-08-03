@@ -9,10 +9,16 @@ ENV/
 # Generated files
 email_tracking.json
 generated_emails.json
+generated_followups.json
 startups.json
 resume.json
 config.json
 users.json
+
+# Local backups (main.css.backup_*, startups.json.bak*, ...)
+*.backup_*
+*.bak
+*.bak[0-9]
 
 # Python
 __pycache__/

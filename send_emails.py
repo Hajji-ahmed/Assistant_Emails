@@ -38,7 +38,7 @@ def build_message(sender_email, sender_name, recipient_name, recipient_email,
                   subject, body, resume_link):
     body_with_resume = body
     if resume_link:
-        body_with_resume = f"{body}\n\nVous pouvez consulter le portfolio de notre équipe ici : {resume_link}"
+        body_with_resume = f"{body}\n\n  {resume_link}"
 
     msg = MIMEText(body_with_resume, 'plain', 'utf-8')
     msg['Subject'] = subject

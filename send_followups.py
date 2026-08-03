@@ -27,6 +27,26 @@ from templates_mgr import load_body, get_meta
 
 BASE_DIR = Path(__file__).parent
 
+# Optional pre-generated follow-up drafts, keyed by company name. When a company
+# has a draft here we skip the OpenAI call entirely (useful when the API key is
+# unavailable, or to review/edit the wording before sending).
+FOLLOWUPS_FILE = BASE_DIR / "generated_followups.json"
+
+
+def _load_followup_drafts() -> dict:
+    """Return {company_name: (subject, body)} from generated_followups.json."""
+    drafts = load_json(FOLLOWUPS_FILE, [])
+    if not isinstance(drafts, list):
+        return {}
+    out = {}
+    for d in drafts:
+        company = d.get("company_name")
+        subject = d.get("subject")
+        body = d.get("body")
+        if company and subject and body:
+            out[company] = (subject, body)
+    return out
+
 
 def _load_startups_index(path: Path) -> dict:
     """Return {EntrepriseName: full_startup_record} for quick lookup."""
@@ -80,8 +100,8 @@ def send_followups(config, on_progress=None, should_stop=None):
     smtp = config["smtp"]
     if not smtp.get("user") or not smtp.get("password"):
         raise ValueError("Identifiants SMTP manquants.")
-    if not config["openai"].get("api_key"):
-        raise ValueError("Clé OpenAI manquante.")
+    # The OpenAI key is only required for companies without a pre-generated draft;
+    # it's checked lazily below so a fully pre-generated batch can send without it.
 
     profile = config["profile"]
     sender_name = profile.get("sender_display_name") or smtp["user"]
@@ -107,8 +127,16 @@ def send_followups(config, on_progress=None, should_stop=None):
     today = date.today().isoformat()
     today_count = int(tracking["daily_counters"].get(today, 0))
 
+    drafts = _load_followup_drafts()
+    drafts_only = bool(config.get("followups", {}).get("drafts_only"))
+
     # Rebuild "due" list — don't rely on outside caller to filter
     due = find_due_followups(config)
+    if drafts_only:
+        total_due = len(due)
+        due = [(e, d) for (e, d) in due if e.get("company_name") in drafts]
+        emit("info", f"Mode pré-généré : {len(due)} relance(s) retenue(s) sur {total_due} due(s).")
+
     counts = {"sent": 0, "failed": 0, "skipped_quota": 0, "total": len(due)}
 
     emit("info", f"{len(due)} relance(s) due(s).")
@@ -117,7 +145,9 @@ def send_followups(config, on_progress=None, should_stop=None):
         return counts
 
     startups_index = _load_startups_index(BASE_DIR / files["startups"])
-    openai_client = OpenAI(api_key=config["openai"]["api_key"])
+    if drafts:
+        emit("info", f"{len(drafts)} relance(s) pré-générée(s) disponible(s).")
+    openai_client = None  # created lazily, only when a draft is missing
     model = config["openai"]["model"]
     temperature = float(config["openai"].get("temperature", 0.2))
     max_tokens = int(config["openai"].get("max_tokens", 500))
@@ -143,23 +173,33 @@ def send_followups(config, on_progress=None, should_stop=None):
                 emit("cancelled", "Relances annulées pendant la pause.")
                 break
 
-        startup = startups_index.get(company, {})
-        prompt = render_prompt(template_body, startup, signature)
-        emit("info", f"[{idx}/{len(due)}] {company} — génération (relance J+{elapsed})")
+        draft = drafts.get(company)
+        if draft:
+            subject, body = draft
+            emit("info", f"[{idx}/{len(due)}] {company} — relance pré-générée (J+{elapsed})")
+        else:
+            startup = startups_index.get(company, {})
+            prompt = render_prompt(template_body, startup, signature)
+            emit("info", f"[{idx}/{len(due)}] {company} — génération (relance J+{elapsed})")
 
-        try:
-            resp = openai_client.chat.completions.create(
-                model=model,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=temperature,
-                max_tokens=max_tokens,
-            )
-            text = (resp.choices[0].message.content or "").strip()
-            subject, body = parse_email_response(text)
-        except Exception as e:
-            counts["failed"] += 1
-            emit("error", f"{company} — échec génération : {e}", company=company)
-            continue
+            try:
+                if openai_client is None:
+                    api_key = config["openai"].get("api_key")
+                    if not api_key:
+                        raise ValueError("Clé OpenAI manquante et aucune relance pré-générée.")
+                    openai_client = OpenAI(api_key=api_key)
+                resp = openai_client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                )
+                text = (resp.choices[0].message.content or "").strip()
+                subject, body = parse_email_response(text)
+            except Exception as e:
+                counts["failed"] += 1
+                emit("error", f"{company} — échec génération : {e}", company=company)
+                continue
 
         msg = build_message(
             sender_email=smtp["user"],

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
+    <div class="app-shell">
     <nav class="topnav">
         <h1 class="logo">Internship Mailer</h1>
         <ul>
@@ -15,7 +16,6 @@
             <li><a href="{{ url_for('prompt_page') }}" class="{% if request.endpoint == 'prompt_page' %}active{% endif %}">Prompt</a></li>
             <li><a href="{{ url_for('startups_page') }}" class="{% if request.endpoint == 'startups_page' %}active{% endif %}">Startups</a></li>
             <li><a href="{{ url_for('emails_page') }}" class="{% if request.endpoint == 'emails_page' %}active{% endif %}">Emails</a></li>
-            <li><a href="{{ url_for('replies_page') }}" class="{% if request.endpoint == 'replies_page' %}active{% endif %}">Réponses</a></li>
         </ul>
         {% if current_user %}
         <div class="user-menu">
@@ -39,6 +39,7 @@
         {% endwith %}
         {% block content %}{% endblock %}
     </main>
+    </div>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>

@@ -50,7 +50,7 @@
 <div class="email-list">
     {% for e in emails %}
     <details class="email-item {% if e._sent %}sent{% endif %} {% if e._reply %}replied{% endif %}"
-             data-index="{{ loop.index0 }}"
+             data-index="{{ e._index }}"
              data-company="{{ e.company_name }}"
              data-status="{{ e._status }}">
         <summary>

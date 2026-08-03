@@ -45,6 +45,10 @@ DEFAULTS = {
     },
     "followups": {
         "delay_days": 7,
+        # When true, only companies present in generated_followups.json are
+        # processed. Avoids grinding through due companies that would need an
+        # OpenAI call (useful when the API key is unavailable).
+        "drafts_only": False,
     },
     "files": {
         "startups": "startups.json",
